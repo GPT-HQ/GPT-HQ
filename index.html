@@ -3,43 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GPT-HQ</title>
+    <title>GPT HQ</title>
     <style>
         body {
-            background: url('path/to/tech-circuit-background.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #ffffff;
-            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
         }
         header {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #0a3d7a;
+            padding: 10px 20px;
+        }
+        img.logo {
+            height: 50px;
+        }
+        button {
+            background-color: #0a74da;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #005bb5;
+        }
+        .hero {
             text-align: center;
-        }
-        header img {
-            max-width: 300px;
-        }
-        h1 {
-            font-size: 2.5em;
-            background: linear-gradient(90deg, #1e90ff, #ff007f);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin: 0;
-        }
-        .content {
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 10px;
+            margin: 50px 0;
         }
     </style>
 </head>
 <body>
-    <header>
-        <img src='path/to/logo.png' alt='GPT-HQ Logo' />
-        <h1>Welcome to GPT-HQ</h1>
-    </header>
-    <div class="content">
-        <p>Your content will go here...</p>
-    </div>
+<header>
+    <img src="path/to/logo.png" alt="Logo" class="logo">
+</header>
+<div class="hero">
+    <h1>Welcome to GPT HQ</h1>
+    <p>Your journey to earning starts here!</p>
+    <button onclick="window.location.href='affiliate-link-url';">Join Now</button>
+</div>
 </body>
 </html>
