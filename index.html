@@ -3,52 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Tech Site</title>
+    <title>Tech Themed Site</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: #001f3f; /* Dark blue */
+            background-color: #001f3f;
             color: white;
             font-family: Arial, sans-serif;
         }
-        header {
-            text-align: center;
-            padding: 20px;
-        }
         .logo {
-            height: 100px;
+            width: 150px;
+            margin: 20px;
+        }
+        .platforms {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+        .platform {
+            margin: 0 15px;
+            text-align: center;
         }
         .button {
-            background-color: #007bff; /* Button color */
+            padding: 10px 20px;
+            background-color: #007bff;
             color: white;
-            padding: 15px 30px;
-            text-decoration: none;
+            border: none;
             border-radius: 5px;
-            display: inline-block;
-            margin: 10px;
-            transition: background-color 0.3s;
+            cursor: pointer;
+            transition: transform 0.2s;
         }
         .button:hover {
-            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+        .discord {
+            text-align: center;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
     <header>
         <img src="logo.png" alt="Logo" class="logo">
-        <h1>Welcome to My Tech Site</h1>
+        <h1>Welcome to the Tech Platform</h1>
     </header>
-    <main>
-        <section>
-            <h2>Explore Our Features</h2>
-            <p>Discover the latest in technology and enhancements.</p>
-            <a href="#" class="button">Get Started</a>
-            <a href="#" class="button">Join Us</a>
-            <a href="#" class="button">Learn More</a>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 My Tech Site. All rights reserved.</p>
+    <section class="platforms">
+        <div class="platform">
+            <h2>CashInStyle</h2>
+            <button class="button">Earn Now</button>
+        </div>
+        <div class="platform">
+            <h2>Gemsloot</h2>
+            <button class="button">Earn Now</button>
+        </div>
+        <div class="platform">
+            <h2>Freecash</h2>
+            <button class="button">Earn Now</button>
+        </div>
+    </section>
+    <footer class="discord">
+        <h2>Join our Discord</h2>
+        <p>Stay connected with our community.</p>
+        <button class="button">Discord Invite</button>
     </footer>
 </body>
 </html>
