@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GPT-HQ</title>
 <style>
-/* General styles */
 html { scroll-behavior: smooth; }
 body {
     margin: 0;
@@ -28,7 +27,6 @@ header {
 header h1 { font-size: 3em; margin: 0; color: #00ffff; }
 header p { font-size: 1.2em; margin-top: 10px; color: #aaaaaa; }
 
-/* Header scale animation */
 @keyframes scaleHeader {
     from { transform: scale(0.9); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
@@ -51,7 +49,6 @@ header p { font-size: 1.2em; margin-top: 10px; color: #aaaaaa; }
     font-weight: bold;
     font-size: 1em;
     transition: transform 0.3s, box-shadow 0.3s;
-    cursor: default;
 }
 .top3 .highlight:hover {
     transform: translateY(-5px);
@@ -100,7 +97,11 @@ header p { font-size: 1.2em; margin-top: 10px; color: #aaaaaa; }
     color: #fff;
     transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
 }
-.platform button.copy:hover { transform: scale(1.05); background-color: #1E90FF; box-shadow: 0 5px 15px rgba(0,191,255,0.5); }
+.platform button.copy:hover {
+    transform: scale(1.05);
+    background-color: #1E90FF;
+    box-shadow: 0 5px 15px rgba(0,191,255,0.5);
+}
 .platform a.button.visit {
     padding: 10px 20px;
     border-radius: 5px;
@@ -110,7 +111,11 @@ header p { font-size: 1.2em; margin-top: 10px; color: #aaaaaa; }
     color: #fff;
     transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
 }
-.platform a.button.visit:hover { transform: scale(1.05); background-color: #00bfff; box-shadow: 0 5px 15px rgba(0,255,255,0.5); }
+.platform a.button.visit:hover {
+    transform: scale(1.05);
+    background-color: #00bfff;
+    box-shadow: 0 5px 15px rgba(0,255,255,0.5);
+}
 
 /* Discord section */
 .discord {
@@ -164,7 +169,6 @@ footer {
 }
 #scrollTopBtn:hover { transform: scale(1.1); background-color: #1E90FF; }
 
-/* Responsive */
 @media (max-width: 768px) {
     .platforms { gap: 20px; }
     .top3 { gap: 15px; }
@@ -267,8 +271,15 @@ document.querySelectorAll('button.copy').forEach(btn => {
 
 // Scroll to Top button
 const scrollBtn = document.getElementById('scrollTopBtn');
-window.onscroll = () => { scrollBtn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? 'block' : 'none'; };
-scrollBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+window.onscroll = () => { 
+    scrollBtn.style.display = 
+        (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) 
+        ? 'block' 
+        : 'none'; 
+};
+scrollBtn.addEventListener('click', () => { 
+    window.scrollTo({ top: 0, behavior: 'smooth' }); 
+});
 
 // Dynamic year
 document.getElementById('year').textContent = new Date().getFullYear();
