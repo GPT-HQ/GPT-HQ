@@ -3,50 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GPT HQ</title>
+    <title>My Tech Site</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: #121212;
+            background-color: #001f3f; /* Dark blue */
             color: white;
             font-family: Arial, sans-serif;
         }
         header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-color: #0a3d7a;
-            padding: 10px 20px;
+            text-align: center;
+            padding: 20px;
         }
-        img.logo {
-            height: 50px;
+        .logo {
+            height: 100px;
         }
-        button {
-            background-color: #0a74da;
+        .button {
+            background-color: #007bff; /* Button color */
             color: white;
-            border: none;
             padding: 15px 30px;
-            cursor: pointer;
-            font-size: 16px;
+            text-decoration: none;
             border-radius: 5px;
+            display: inline-block;
+            margin: 10px;
             transition: background-color 0.3s;
         }
-        button:hover {
-            background-color: #005bb5;
-        }
-        .hero {
-            text-align: center;
-            margin: 50px 0;
+        .button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-<header>
-    <img src="path/to/logo.png" alt="Logo" class="logo">
-</header>
-<div class="hero">
-    <h1>Welcome to GPT HQ</h1>
-    <p>Your journey to earning starts here!</p>
-    <button onclick="window.location.href='affiliate-link-url';">Join Now</button>
-</div>
+    <header>
+        <img src="logo.png" alt="Logo" class="logo">
+        <h1>Welcome to My Tech Site</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Explore Our Features</h2>
+            <p>Discover the latest in technology and enhancements.</p>
+            <a href="#" class="button">Get Started</a>
+            <a href="#" class="button">Join Us</a>
+            <a href="#" class="button">Learn More</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 My Tech Site. All rights reserved.</p>
+    </footer>
 </body>
 </html>
