@@ -3,68 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Themed Site</title>
+    <title>GPT HQ</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            background-color: #001f3f;
-            color: white;
-            font-family: Arial, sans-serif;
-        }
-        .logo {
-            width: 150px;
-            margin: 20px;
-        }
-        .platforms {
-            display: flex;
-            justify-content: center;
-            margin: 20px;
-        }
-        .platform {
-            margin: 0 15px;
-            text-align: center;
-        }
-        .button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-        .button:hover {
-            transform: scale(1.1);
-        }
-        .discord {
-            text-align: center;
-            margin-top: 30px;
-        }
-    </style>
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="Logo" class="logo">
-        <h1>Welcome to the Tech Platform</h1>
+        <h1>Welcome to GPT HQ</h1>
     </header>
-    <section class="platforms">
-        <div class="platform">
-            <h2>CashInStyle</h2>
-            <button class="button">Earn Now</button>
-        </div>
-        <div class="platform">
-            <h2>Gemsloot</h2>
-            <button class="button">Earn Now</button>
-        </div>
-        <div class="platform">
-            <h2>Freecash</h2>
-            <button class="button">Earn Now</button>
-        </div>
-    </section>
-    <footer class="discord">
-        <h2>Join our Discord</h2>
-        <p>Stay connected with our community.</p>
-        <button class="button">Discord Invite</button>
+    <main>
+        <section class="platform-cards">
+            <div class="card">
+                <h2>CashInStyle</h2>
+                <a href="https://cashinstyle.com/?ref=Kinu" class="earn-button">💰 Start Earning</a>
+            </div>
+            <div class="card">
+                <h2>Gemsloot</h2>
+                <a href="https://gemsloot.com/?aff=Kinu" class="earn-button">💎 Unlock Rewards</a>
+            </div>
+            <div class="card">
+                <h2>Freecash</h2>
+                <a href="https://freecash.com/r/EXVGN" class="earn-button">🚀 Get Paid Now</a>
+            </div>
+        </section>
+        <section class="discord">
+            <h2>Join our Discord Community</h2>
+            <p>Connect with others in the community!</p>
+            <a href="https://discord.gg/example" class="discord-button">Join Discord</a>
+        </section>
+        <button id="scrollToTop" class="scroll-button">Scroll to Top</button>
+    </main>
+    <footer>
+        <p>&copy; 2026 GPT HQ</p>
     </footer>
+    <script>
+        document.getElementById('scrollToTop').onclick = function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        };
+    </script>
 </body>
 </html>
