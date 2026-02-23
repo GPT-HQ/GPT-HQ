@@ -260,9 +260,9 @@ footer {
 <body>
 
 <nav>
-    <a onclick="showPage('sitesPage')">Sites</a>
-    <a onclick="showPage('faqPage')">FAQ</a>
-    <a onclick="showPage('guidesPage')">Guides</a>
+    <a id="btnSites">Sites</a>
+    <a id="btnFAQ">FAQ</a>
+    <a id="btnGuides">Guides</a>
 </nav>
 
 <!-- SITES PAGE -->
@@ -393,96 +393,3 @@ footer {
 
 <!-- GUIDES PAGE -->
 <div id="guidesPage">
-    <h1>Guides</h1>
-    <p style="font-size:1.2em; text-align:center; margin-bottom:25px;">
-        Our guides will help you maximize your earnings. Click a topic below.
-    </p>
-
-    <!-- SURVEYS GUIDE -->
-    <div class="guide-item" onclick="toggleGuide(1)">
-        Surveys — How to Do Them Correctly
-    </div>
-    <div id="guide-content-1" class="guide-content">
-        <p><strong>Best survey providers:</strong> Based on experience, <strong>BitLabs</strong> and <strong>Prime</strong> consistently offer the most reliable surveys, the best routing, and the highest approval rates.</p>
-
-        <p><strong>How to answer surveys properly:</strong></p>
-        <ul>
-            <li>Always answer honestly whenever possible — it gives you the highest approval rate.</li>
-            <li>If you choose to lie, you must keep the same lie forever. Survey providers store your answers and compare them across all surveys.</li>
-            <li>If your answers don’t match your previous ones <strong>with the same survey provider</strong>, you can be banned or have rewards revoked.</li>
-            <li>Read every question carefully — rushing increases disqualification.</li>
-            <li>Never contradict yourself on key details (age, job, income, household size, education).</li>
-            <li>Don’t randomly click options — attention checks will catch you instantly.</li>
-            <li>Use consistent demographic info across all platforms and routers.</li>
-            <li>If a survey feels broken or suspicious, leave it instead of forcing answers.</li>
-        </ul>
-
-        <p><strong>Quick tips to increase approval rate:</strong></p>
-        <ul>
-            <li>Keep your profile updated on each survey router.</li>
-            <li>Avoid extreme answers unless they truly apply to you.</li>
-            <li>Take surveys in a quiet environment to avoid mistakes.</li>
-            <li>Don’t speed — slow and steady earns more in the long run.</li>
-            <li>Be patient: some days have fewer good surveys than others.</li>
-        </ul>
-
-        <p><em>More guides will be added soon — stay tuned.</em></p>
-    </div>
-
-    <footer>
-        &copy; <span id="year3"></span> GPT-HQ. All rights reserved.
-    </footer>
-</div>
-
-<script>
-function showPage(page) {
-    document.getElementById("sitesPage").style.display = "none";
-    document.getElementById("faqPage").style.display = "none";
-    document.getElementById("guidesPage").style.display = "none";
-    document.getElementById(page).style.display = "block";
-}
-
-// Default page
-showPage('sitesPage');
-
-// Fade-in animation
-const platforms = document.querySelectorAll('.platform');
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('show'); });
-}, { threshold: 0.2 });
-platforms.forEach(platform => observer.observe(platform));
-
-// Accordion
-function toggleGuide(id) {
-    const content = document.getElementById("guide-content-" + id);
-
-    if (content.style.maxHeight) {
-        content.style.maxHeight = null;
-    } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-    }
-}
-
-// Contact form (mailto)
-function sendEmail(event) {
-    event.preventDefault();
-
-    const name = document.getElementById("name")?.value || "";
-    const email = document.getElementById("email")?.value || "";
-    const message = document.getElementById("message")?.value || "";
-
-    const mailtoLink =
-        "mailto:gpthq.help@gmail.com"
-        + "?subject=" + encodeURIComponent("Message from GPT-HQ")
-        + "&body=" + encodeURIComponent(
-            "Name: " + name + "\n"
-            + "Email: " + email + "\n\n"
-            + message
-        );
-
-    window.location.href = mailtoLink;
-}
-
-// Dynamic year
-document.getElementById('year').textContent = new Date().getFullYear();
-document.get
