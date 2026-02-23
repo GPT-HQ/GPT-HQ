@@ -332,6 +332,25 @@ footer {
 
 </section>
 
+<section class="contact">
+    <h2>Contact Us</h2>
+
+    <div class="contact-form">
+        <form onsubmit="sendEmail(event)">
+            <label>Your Name</label>
+            <input type="text" id="name" required>
+
+            <label>Your Email</label>
+            <input type="email" id="email" required>
+
+            <label>Your Message</label>
+            <textarea id="message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</section>
+
 <footer>
     &copy; <span id="year"></span> GPT-HQ. All rights reserved.
 </footer>
@@ -366,25 +385,6 @@ footer {
         <h3>Do I need to invest money?</h3>
         <p>No — all listed platforms are free to use. However, some offers may require a monetary investment in order to complete them.</p>
     </div>
-
-    <section class="contact">
-        <h2>Contact Us</h2>
-
-        <div class="contact-form">
-            <form onsubmit="sendEmail(event)">
-                <label>Your Name</label>
-                <input type="text" id="name2" required>
-
-                <label>Your Email</label>
-                <input type="email" id="email2" required>
-
-                <label>Your Message</label>
-                <textarea id="message2" rows="5" required></textarea>
-
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </section>
 
     <footer>
         &copy; <span id="year2"></span> GPT-HQ. All rights reserved.
@@ -429,25 +429,6 @@ footer {
         <p><em>More guides will be added soon — stay tuned.</em></p>
     </div>
 
-    <section class="contact">
-        <h2>Contact Us</h2>
-
-        <div class="contact-form">
-            <form onsubmit="sendEmail(event)">
-                <label>Your Name</label>
-                <input type="text" id="name3" required>
-
-                <label>Your Email</label>
-                <input type="email" id="email3" required>
-
-                <label>Your Message</label>
-                <textarea id="message3" rows="5" required></textarea>
-
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </section>
-
     <footer>
         &copy; <span id="year3"></span> GPT-HQ. All rights reserved.
     </footer>
@@ -479,4 +460,34 @@ function toggleGuide(id) {
         content.style.maxHeight = null;
     } else {
         content.style.maxHeight = content.scrollHeight + "px";
-   
+    }
+}
+
+// Contact form (mailto)
+function sendEmail(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    const mailtoLink =
+        "mailto:gpthq.help@gmail.com"
+        + "?subject=" + encodeURIComponent("Message from GPT-HQ")
+        + "&body=" + encodeURIComponent(
+            "Name: " + name + "\n"
+            + "Email: " + email + "\n\n"
+            + message
+        );
+
+    window.location.href = mailtoLink;
+}
+
+// Dynamic year
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('year2').textContent = new Date().getFullYear();
+document.getElementById('year3').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
