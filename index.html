@@ -282,6 +282,17 @@ footer {
         <h3>Do I need to invest money?</h3>
         <p>No — all listed platforms are free to use. However, some offers may require a monetary investment in order to complete them.</p>
     </div>
+
+    <!-- CONTACT SECTION ALSO ON FAQ PAGE -->
+    <section class="discord">
+        <h2>Contact Us on Discord</h2>
+        <a href="https://discord.gg/KgGax52nH" target="_blank">Join our Discord</a>
+    </section>
+
+    <footer>
+        &copy; <span id="year2"></span> GPT-HQ. All rights reserved.
+    </footer>
+
 </div>
 
 <script>
@@ -303,6 +314,7 @@ platforms.forEach(platform => observer.observe(platform));
 
 // Dynamic year
 document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('year2').textContent = new Date().getFullYear();
 </script>
 
 </body>
