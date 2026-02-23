@@ -11,60 +11,26 @@ html { scroll-behavior: smooth; }
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #0a0a0a;
-    color: #ffffff;
+    background: #000;
+    color: #fff;
     overflow-x: hidden;
-    position: relative;
-}
-
-/* ANIMATED BACKGROUND GRADIENT */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: linear-gradient(120deg, #001f33, #00334d, #001a26);
-    background-size: 300% 300%;
-    animation: gradientMove 18s ease infinite;
-    z-index: -3;
-}
-
-/* GLOW GRID OVERLAY */
-body::after {
-    content: "";
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-image: 
-        linear-gradient(rgba(0,255,255,0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,255,255,0.05) 1px, transparent 1px);
-    background-size: 50px 50px;
-    z-index: -2;
-}
-
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
 }
 
 /* HEADER */
 header {
     text-align: center;
     padding: 70px 20px 40px;
-    background: rgba(0,0,0,0.4);
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid rgba(0,255,255,0.2);
+    background: #000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 header h1 {
     font-size: 3.2em;
     margin: 0;
-    color: #00ffff;
-    text-shadow: 0 0 15px #00ffff;
+    color: #fff;
 }
 header p {
     font-size: 1.2em;
-    color: #b5b5b5;
+    color: #ccc;
 }
 
 /* TOP 3 */
@@ -77,19 +43,15 @@ header p {
     max-width: 900px;
 }
 .top3 .highlight {
-    background: linear-gradient(135deg, #00ffff, #1E90FF);
-    color: #000;
     padding: 15px 25px;
     border-radius: 12px;
     font-weight: bold;
     font-size: 1.1em;
-    box-shadow: 0 0 12px rgba(0,255,255,0.4);
-    transition: transform 0.3s, box-shadow 0.3s;
+    color: #000;
 }
-.top3 .highlight:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 0 25px rgba(0,255,255,0.7);
-}
+.top3 .highlight:nth-child(1) { background: #00C853; }
+.top3 .highlight:nth-child(2) { background: #FF6D00; }
+.top3 .highlight:nth-child(3) { background: #00E676; }
 
 /* PLATFORM CARDS */
 .platforms {
@@ -102,24 +64,37 @@ header p {
 }
 
 .platform {
-    background: rgba(20,20,20,0.7);
-    border: 1px solid rgba(0,255,255,0.15);
-    border-radius: 14px;
+    border-radius: 18px;
     padding: 30px;
-    backdrop-filter: blur(4px);
-    box-shadow: 0 0 20px rgba(0,255,255,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    color: #000;
     opacity: 0;
     transform: translateY(30px);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 .platform:hover {
     transform: translateY(-6px);
-    box-shadow: 0 0 30px rgba(0,255,255,0.4);
+    box-shadow: 0 0 25px rgba(255,255,255,0.25);
 }
+
+.platform img {
+    width: 120px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+/* INDIVIDUAL BACKGROUNDS */
+.platform:nth-child(1) { background: #00C853; }
+.platform:nth-child(2) { background: #FF6D00; }
+.platform:nth-child(3) { background: #00E676; }
+
 .platform h2 {
-    color: #00ffff;
     margin-top: 0;
-    text-shadow: 0 0 10px #00ffff;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.platform ul li {
+    margin-bottom: 6px;
 }
 
 /* CTA BUTTON */
@@ -127,26 +102,25 @@ header p {
     display: inline-block;
     margin-top: 18px;
     padding: 12px 25px;
-    background: linear-gradient(135deg, #00ffff, #1E90FF);
-    color: #000;
+    background: #000;
+    color: #fff;
     font-weight: bold;
     border-radius: 8px;
     text-decoration: none;
     font-size: 1.1em;
-    box-shadow: 0 0 15px rgba(0,255,255,0.4);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
 }
 .platform .cta:hover {
     transform: scale(1.07);
-    box-shadow: 0 0 25px rgba(0,255,255,0.7);
+    opacity: 0.85;
 }
 
 /* DISCORD */
 .discord {
     text-align: center;
     padding: 60px 20px;
-    background: rgba(0,0,0,0.4);
-    border-top: 1px solid rgba(0,255,255,0.2);
+    background: #000;
+    border-top: 1px solid rgba(255,255,255,0.1);
 }
 .discord a {
     padding: 15px 30px;
@@ -155,10 +129,9 @@ header p {
     font-weight: bold;
     border-radius: 8px;
     font-size: 1.2em;
-    transition: transform 0.3s, background 0.3s;
+    transition: transform 0.3s;
 }
 .discord a:hover {
-    background-color: #5b6eae;
     transform: scale(1.07);
 }
 
@@ -182,18 +155,17 @@ footer {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background-color: #00bfff;
-    color: white;
+    background-color: #fff;
+    color: #000;
     padding: 12px 16px;
     border-radius: 8px;
     border: none;
     cursor: pointer;
     display: none;
-    transition: transform 0.3s, background 0.3s;
+    transition: transform 0.3s;
 }
 #scrollTopBtn:hover {
     transform: scale(1.1);
-    background-color: #1E90FF;
 }
 </style>
 </head>
@@ -214,18 +186,20 @@ footer {
 <section class="platforms">
 
     <div class="platform">
+        <img src="https://via.placeholder.com/200x80?text=CashInStyle+Logo" alt="CashInStyle Logo">
         <h2>CashInStyle</h2>
-        <p>CashInStyle is a modern GPT platform where users earn money by completing surveys, apps, games and offerwalls. Known for high rates and fast payouts.</p>
+        <p>CashInStyle is a modern GPT platform where users earn money by completing surveys, apps, games and offerwalls.</p>
         <ul>
             <li>Fast payouts — within 24 hours</li>
             <li>High offerwall rates</li>
             <li>Low $2 cashout</li>
             <li>PayPal, crypto, gift cards</li>
         </ul>
-        <a href="https://cashinstyle.com/?ref=Kinu" class="cta" target="_blank">Start Earning on CashInStyle</a>
+        <a href="https://cashinstyle.com/?ref=Kinu" class="cta" target="_blank">Start Earning</a>
     </div>
 
     <div class="platform">
+        <img src="https://via.placeholder.com/200x80?text=Gemsloot+Logo" alt="Gemsloot Logo">
         <h2>Gemsloot</h2>
         <p>Gemsloot offers smooth UI, instant withdrawals and strong earning options across surveys, apps and games.</p>
         <ul>
@@ -233,10 +207,11 @@ footer {
             <li>Competitive offerwalls</li>
             <li>Low cashout</li>
         </ul>
-        <a href="https://gemsloot.com/?aff=Kinu" class="cta" target="_blank">Start Earning on Gemsloot</a>
+        <a href="https://gemsloot.com/?aff=Kinu" class="cta" target="_blank">Start Earning</a>
     </div>
 
     <div class="platform">
+        <img src="https://via.placeholder.com/200x80?text=Freecash+Logo" alt="Freecash Logo">
         <h2>Freecash</h2>
         <p>Freecash is one of the most popular GPT platforms with extremely fast payouts and top‑tier offerwalls.</p>
         <ul>
@@ -244,7 +219,7 @@ footer {
             <li>High offerwall rates</li>
             <li>PayPal, crypto, gift cards</li>
         </ul>
-        <a href="https://freecash.com/r/EXVGN" class="cta" target="_blank">Start Earning on Freecash</a>
+        <a href="https://freecash.com/r/EXVGN" class="cta" target="_blank">Start Earning</a>
     </div>
 
 </section>
