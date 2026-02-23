@@ -199,13 +199,14 @@ footer {
     font-size: 0.9em;
 }
 
-/* FAQ + GUIDES */
-#faqPage, #guidesPage {
-    display: none;
+/* FAQ + GUIDES WRAPPERS */
+.section-wrapper {
     max-width: 900px;
     margin: 40px auto;
     padding: 0 20px;
 }
+
+/* FAQ ITEMS */
 .faq-item {
     background: #ffffff;
     padding: 20px;
@@ -218,51 +219,45 @@ footer {
     color: var(--accent);
 }
 
-/* GUIDES ACCORDION */
-.guide-item {
+/* GUIDES USING DETAILS/SUMMARY */
+.guide-block {
     background: #ffffff;
-    border: 1px solid rgba(0,0,0,0.1);
     border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.1);
     margin-bottom: 15px;
-    padding: 18px 20px;
+    padding: 10px 15px;
+}
+.guide-block summary {
     cursor: pointer;
     font-weight: bold;
     color: var(--accent);
-    transition: background 0.2s;
+    list-style: none;
 }
-.guide-item:hover {
-    background: rgba(0,0,0,0.03);
+.guide-block summary::-webkit-details-marker {
+    display: none;
 }
-.guide-content {
-    max-height: 0;
-    overflow: hidden;
-    background: #ffffff;
-    border-left: 3px solid var(--accent);
-    margin-top: 8px;
-    padding: 0 15px;
-    border-radius: 0 0 10px 10px;
-    transition: max-height 0.35s ease;
+.guide-block summary::before {
+    content: "▶ ";
+    font-size: 0.9em;
 }
-.guide-content p {
-    margin: 15px 0;
+details[open] summary::before {
+    content: "▼ ";
+}
+.guide-block ul {
+    margin-left: 20px;
+}
+.guide-block p {
     color: #333;
 }
-
-/* ANIMATION */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-.platform.show { animation: fadeInUp 0.8s forwards; }
 </style>
 </head>
 
 <body>
 
 <nav>
-    <a id="btnSites">Sites</a>
-    <a id="btnFAQ">FAQ</a>
-    <a id="btnGuides">Guides</a>
+    <a href="#sitesPage">Sites</a>
+    <a href="#faqPage">FAQ</a>
+    <a href="#guidesPage">Guides</a>
 </nav>
 
 <!-- SITES PAGE -->
@@ -336,15 +331,15 @@ footer {
     <h2>Contact Us</h2>
 
     <div class="contact-form">
-        <form onsubmit="sendEmail(event)">
+        <form action="mailto:gpthq.help@gmail.com" method="post" enctype="text/plain">
             <label>Your Name</label>
-            <input type="text" id="name" required>
+            <input type="text" name="Name" required>
 
             <label>Your Email</label>
-            <input type="email" id="email" required>
+            <input type="email" name="Email" required>
 
             <label>Your Message</label>
-            <textarea id="message" rows="5" required></textarea>
+            <textarea name="Message" rows="5" required></textarea>
 
             <button type="submit">Send Message</button>
         </form>
@@ -358,7 +353,7 @@ footer {
 </div>
 
 <!-- FAQ PAGE -->
-<div id="faqPage">
+<div id="faqPage" class="section-wrapper">
     <h1>Frequently Asked Questions</h1>
 
     <div class="faq-item">
@@ -385,11 +380,48 @@ footer {
         <h3>Do I need to invest money?</h3>
         <p>No — all listed platforms are free to use. However, some offers may require a monetary investment in order to complete them.</p>
     </div>
-
-    <footer>
-        &copy; <span id="year2"></span> GPT-HQ. All rights reserved.
-    </footer>
 </div>
 
 <!-- GUIDES PAGE -->
-<div id="guidesPage">
+<div id="guidesPage" class="section-wrapper">
+    <h1>Guides</h1>
+    <p style="font-size:1.2em; text-align:center; margin-bottom:25px;">
+        Our guides will help you maximize your earnings. Click a topic below.
+    </p>
+
+    <!-- SURVEYS GUIDE -->
+    <details class="guide-block">
+        <summary>Surveys — How to Do Them Correctly</summary>
+        <p><strong>Best survey providers:</strong> Based on experience, <strong>BitLabs</strong> and <strong>Prime</strong> consistently offer the most reliable surveys, the best routing, and the highest approval rates.</p>
+
+        <p><strong>How to answer surveys properly:</strong></p>
+        <ul>
+            <li>Always answer honestly whenever possible — it gives you the highest approval rate.</li>
+            <li>If you choose to lie, you must keep the same lie forever. Survey providers store your answers and compare them across all surveys.</li>
+            <li>If your answers don’t match your previous ones <strong>with the same survey provider</strong>, you can be banned or have rewards revoked.</li>
+            <li>Read every question carefully — rushing increases disqualification.</li>
+            <li>Never contradict yourself on key details (age, job, income, household size, education).</li>
+            <li>Don’t randomly click options — attention checks will catch you instantly.</li>
+            <li>Use consistent demographic info across all platforms and routers.</li>
+            <li>If a survey feels broken or suspicious, leave it instead of forcing answers.</li>
+        </ul>
+
+        <p><strong>Quick tips to increase approval rate:</strong></p>
+        <ul>
+            <li>Keep your profile updated on each survey router.</li>
+            <li>Avoid extreme answers unless they truly apply to you.</li>
+            <li>Take surveys in a quiet environment to avoid mistakes.</li>
+            <li>Don’t speed — slow and steady earns more in the long run.</li>
+            <li>Be patient: some days have fewer good surveys than others.</li>
+        </ul>
+
+        <p><em>More guides will be added soon — stay tuned.</em></p>
+    </details>
+</div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
