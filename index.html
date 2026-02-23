@@ -467,9 +467,9 @@ function toggleGuide(id) {
 function sendEmail(event) {
     event.preventDefault();
 
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
+    const name = document.getElementById("name")?.value || "";
+    const email = document.getElementById("email")?.value || "";
+    const message = document.getElementById("message")?.value || "";
 
     const mailtoLink =
         "mailto:gpthq.help@gmail.com"
@@ -485,9 +485,4 @@ function sendEmail(event) {
 
 // Dynamic year
 document.getElementById('year').textContent = new Date().getFullYear();
-document.getElementById('year2').textContent = new Date().getFullYear();
-document.getElementById('year3').textContent = new Date().getFullYear();
-</script>
-
-</body>
-</html>
+document.get
