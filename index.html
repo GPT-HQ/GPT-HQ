@@ -143,24 +143,52 @@ header p {
     opacity: 0.85;
 }
 
-/* DISCORD */
-.discord {
+/* CONTACT FORM */
+.contact {
     text-align: center;
-    padding: 60px 20px;
+    padding: 50px 20px;
     background: #ffffff;
     border-top: 1px solid rgba(0,0,0,0.1);
 }
-.discord a {
-    padding: 15px 30px;
-    background-color: var(--accent);
+.contact h2 {
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+.contact-form label {
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.2);
+    font-size: 1em;
+}
+.contact-form button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 14px;
+    background: var(--accent);
     color: #fff;
     font-weight: bold;
+    border: none;
     border-radius: 8px;
-    font-size: 1.2em;
-    transition: transform 0.3s;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: opacity 0.3s, transform 0.3s;
 }
-.discord a:hover {
-    transform: scale(1.07);
+.contact-form button:hover {
+    opacity: 0.85;
+    transform: scale(1.03);
 }
 
 /* FOOTER */
@@ -188,6 +216,36 @@ footer {
 .faq-item h3 {
     margin: 0 0 10px;
     color: var(--accent);
+}
+
+/* GUIDES ACCORDION */
+.guide-item {
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 12px;
+    margin-bottom: 15px;
+    padding: 18px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--accent);
+    transition: background 0.2s;
+}
+.guide-item:hover {
+    background: rgba(0,0,0,0.03);
+}
+.guide-content {
+    max-height: 0;
+    overflow: hidden;
+    background: #ffffff;
+    border-left: 3px solid var(--accent);
+    margin-top: 8px;
+    padding: 0 15px;
+    border-radius: 0 0 10px 10px;
+    transition: max-height 0.35s ease;
+}
+.guide-content p {
+    margin: 15px 0;
+    color: #333;
 }
 
 /* ANIMATION */
@@ -274,9 +332,23 @@ footer {
 
 </section>
 
-<section class="discord">
-    <h2>Contact Us on Discord</h2>
-    <a href="https://discord.gg/KgGax52nH" target="_blank">Join our Discord</a>
+<section class="contact">
+    <h2>Contact Us</h2>
+
+    <div class="contact-form">
+        <form onsubmit="sendEmail(event)">
+            <label>Your Name</label>
+            <input type="text" id="name" required>
+
+            <label>Your Email</label>
+            <input type="email" id="email" required>
+
+            <label>Your Message</label>
+            <textarea id="message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
 </section>
 
 <footer>
@@ -314,9 +386,23 @@ footer {
         <p>No — all listed platforms are free to use. However, some offers may require a monetary investment in order to complete them.</p>
     </div>
 
-    <section class="discord">
-        <h2>Contact Us on Discord</h2>
-        <a href="https://discord.gg/KgGax52nH" target="_blank">Join our Discord</a>
+    <section class="contact">
+        <h2>Contact Us</h2>
+
+        <div class="contact-form">
+            <form onsubmit="sendEmail(event)">
+                <label>Your Name</label>
+                <input type="text" id="name2" required>
+
+                <label>Your Email</label>
+                <input type="email" id="email2" required>
+
+                <label>Your Message</label>
+                <textarea id="message2" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
     </section>
 
     <footer>
@@ -327,9 +413,59 @@ footer {
 <!-- GUIDES PAGE -->
 <div id="guidesPage">
     <h1>Guides</h1>
-    <p style="font-size:1.3em; text-align:center; margin-top:20px;">
-        🚧 Guides are coming soon! Stay tuned for updates.
+    <p style="font-size:1.2em; text-align:center; margin-bottom:25px;">
+        Our guides will help you maximize your earnings. Click a topic below.
     </p>
+
+    <!-- SURVEYS GUIDE -->
+    <div class="guide-item" onclick="toggleGuide(1)">
+        Surveys — How to Do Them Correctly
+    </div>
+    <div id="guide-content-1" class="guide-content">
+        <p><strong>Best survey providers:</strong> Based on experience, <strong>BitLabs</strong> and <strong>Prime</strong> consistently offer the most reliable surveys, the best routing, and the highest approval rates.</p>
+
+        <p><strong>How to answer surveys properly:</strong></p>
+        <ul>
+            <li>Always answer honestly whenever possible — it gives you the highest approval rate.</li>
+            <li>If you choose to lie, you must keep the same lie forever. Survey providers store your answers and compare them across all surveys.</li>
+            <li>If your answers don’t match your previous ones <strong>with the same survey provider</strong>, you can be banned or have rewards revoked.</li>
+            <li>Read every question carefully — rushing increases disqualification.</li>
+            <li>Never contradict yourself on key details (age, job, income, household size, education).</li>
+            <li>Don’t randomly click options — attention checks will catch you instantly.</li>
+            <li>Use consistent demographic info across all platforms and routers.</li>
+            <li>If a survey feels broken or suspicious, leave it instead of forcing answers.</li>
+        </ul>
+
+        <p><strong>Quick tips to increase approval rate:</strong></p>
+        <ul>
+            <li>Keep your profile updated on each survey router.</li>
+            <li>Avoid extreme answers unless they truly apply to you.</li>
+            <li>Take surveys in a quiet environment to avoid mistakes.</li>
+            <li>Don’t speed — slow and steady earns more in the long run.</li>
+            <li>Be patient: some days have fewer good surveys than others.</li>
+        </ul>
+
+        <p><em>More guides will be added soon — stay tuned.</em></p>
+    </div>
+
+    <section class="contact">
+        <h2>Contact Us</h2>
+
+        <div class="contact-form">
+            <form onsubmit="sendEmail(event)">
+                <label>Your Name</label>
+                <input type="text" id="name3" required>
+
+                <label>Your Email</label>
+                <input type="email" id="email3" required>
+
+                <label>Your Message</label>
+                <textarea id="message3" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
 
     <footer>
         &copy; <span id="year3"></span> GPT-HQ. All rights reserved.
@@ -354,11 +490,12 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.2 });
 platforms.forEach(platform => observer.observe(platform));
 
-// Dynamic year
-document.getElementById('year').textContent = new Date().getFullYear();
-document.getElementById('year2').textContent = new Date().getFullYear();
-document.getElementById('year3').textContent = new Date().getFullYear();
-</script>
+// Accordion
+function toggleGuide(id) {
+    const content = document.getElementById("guide-content-" + id);
 
-</body>
-</html>
+    if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+    } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+   
