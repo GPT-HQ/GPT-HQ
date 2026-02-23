@@ -190,7 +190,7 @@ footer {
 }
 
 /* FAQ PAGE */
-#faqPage {
+#faqPage, #guidesPage {
     display: none;
     max-width: 900px;
     margin: 40px auto;
@@ -222,6 +222,7 @@ footer {
 <nav>
     <a onclick="showPage('sitesPage')">Sites</a>
     <a onclick="showPage('faqPage')">FAQ</a>
+    <a onclick="showPage('guidesPage')">Guides</a>
 </nav>
 
 <!-- SITES PAGE -->
@@ -240,6 +241,7 @@ footer {
 
 <section class="platforms">
 
+    <!-- CASHINSTYLE -->
     <div class="platform">
         <div class="platform-badge">1</div>
         <div class="favourite-badge">Favourite</div>
@@ -254,6 +256,7 @@ footer {
         <a href="https://cashinstyle.com/?ref=Kinu" class="cta" target="_blank">Start Earning</a>
     </div>
 
+    <!-- GEMSLOOT -->
     <div class="platform">
         <div class="platform-badge">2</div>
         <h2>Gemsloot</h2>
@@ -266,6 +269,7 @@ footer {
         <a href="https://gemsloot.com/?aff=Kinu" class="cta" target="_blank">Start Earning</a>
     </div>
 
+    <!-- FREECASH -->
     <div class="platform">
         <div class="platform-badge">3</div>
         <h2>Freecash</h2>
@@ -276,6 +280,20 @@ footer {
             <li>PayPal, crypto, gift cards</li>
         </ul>
         <a href="https://freecash.com/r/EXVGN" class="cta" target="_blank">Start Earning</a>
+    </div>
+
+    <!-- SPLITDROP -->
+    <div class="platform">
+        <div class="platform-badge">4</div>
+        <h2>SplitDrop</h2>
+        <p>SplitDrop is a gamified GPT platform where users earn through offerwalls, daily bonuses, and fast-paced “drops” that reward the quickest claimers. The site features 13 offerwalls, competitive leaderboards, and a daily bonus pool shared among top earners. Withdrawals are fast via PayPal or crypto.</p>
+        <ul>
+            <li>13 offerwalls</li>
+            <li>Daily bonus pool</li>
+            <li>Fast PayPal & crypto payouts</li>
+            <li>Gamified “drops” system</li>
+        </ul>
+        <a href="https://splitdrop.com/home.html?friend=130186" class="cta" target="_blank">Start Earning</a>
     </div>
 
 </section>
@@ -328,13 +346,25 @@ footer {
     <footer>
         &copy; <span id="year2"></span> GPT-HQ. All rights reserved.
     </footer>
+</div>
 
+<!-- GUIDES PAGE -->
+<div id="guidesPage">
+    <h1>Guides</h1>
+    <p style="font-size:1.3em; text-align:center; margin-top:20px;">
+        🚧 Guides are coming soon! Stay tuned for updates.
+    </p>
+
+    <footer>
+        &copy; <span id="year3"></span> GPT-HQ. All rights reserved.
+    </footer>
 </div>
 
 <script>
 function showPage(page) {
     document.getElementById("sitesPage").style.display = "none";
     document.getElementById("faqPage").style.display = "none";
+    document.getElementById("guidesPage").style.display = "none";
     document.getElementById(page).style.display = "block";
 }
 
@@ -351,6 +381,7 @@ platforms.forEach(platform => observer.observe(platform));
 // Dynamic year
 document.getElementById('year').textContent = new Date().getFullYear();
 document.getElementById('year2').textContent = new Date().getFullYear();
+document.getElementById('year3').textContent = new Date().getFullYear();
 </script>
 
 </body>
