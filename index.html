@@ -19,6 +19,7 @@ body {
 /* MAIN ACCENT COLOR */
 :root {
     --accent: #4A90E2;
+    --gold: #d4af37;
 }
 
 /* NAVIGATION (STICKY) */
@@ -89,18 +90,19 @@ header p {
 }
 
 .platform {
+    position: relative;
     background: #ffffff;
     border-radius: 18px;
     padding: 30px;
     color: #111;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: transform 0.3s, box-shadow 0.3s;
     border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    transform: translateY(0);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 .platform:hover {
     transform: translateY(-6px);
-    box-shadow: 0 0 25px rgba(0,0,0,0.15);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.18);
 }
 
 .platform h2 {
@@ -108,6 +110,37 @@ header p {
     font-size: 1.8em;
     font-weight: bold;
     color: var(--accent);
+}
+
+/* BADGES */
+.platform-badge {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    background: var(--accent);
+    color: #fff;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.1em;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.favourite-badge {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: var(--gold);
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 0.95em;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
 /* CTA BUTTON */
@@ -208,6 +241,8 @@ footer {
 <section class="platforms">
 
     <div class="platform">
+        <div class="platform-badge">1</div>
+        <div class="favourite-badge">Favourite</div>
         <h2>CashInStyle</h2>
         <p>CashInStyle is a modern GPT platform where users earn money by completing surveys, apps and games.</p>
         <ul>
@@ -220,6 +255,7 @@ footer {
     </div>
 
     <div class="platform">
+        <div class="platform-badge">2</div>
         <h2>Gemsloot</h2>
         <p>Gemsloot offers smooth UI, instant withdrawals and strong earning options across surveys, apps and games.</p>
         <ul>
@@ -231,6 +267,7 @@ footer {
     </div>
 
     <div class="platform">
+        <div class="platform-badge">3</div>
         <h2>Freecash</h2>
         <p>Freecash is one of the most popular GPT platforms with extremely fast payouts and top‑tier earning options.</p>
         <ul>
@@ -283,7 +320,6 @@ footer {
         <p>No — all listed platforms are free to use. However, some offers may require a monetary investment in order to complete them.</p>
     </div>
 
-    <!-- CONTACT SECTION ALSO ON FAQ PAGE -->
     <section class="discord">
         <h2>Contact Us on Discord</h2>
         <a href="https://discord.gg/KgGax52nH" target="_blank">Join our Discord</a>
