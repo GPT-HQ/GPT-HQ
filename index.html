@@ -22,7 +22,7 @@ body {
     --gold: #d4af37;
 }
 
-/* NAVIGATION (STICKY) */
+/* NAVIGATION */
 nav {
     background: #ffffff;
     border-bottom: 1px solid rgba(0,0,0,0.1);
@@ -39,7 +39,6 @@ nav a {
     color: var(--accent);
     text-decoration: none;
     font-weight: bold;
-    cursor: pointer;
 }
 nav a:hover {
     opacity: 0.7;
@@ -54,7 +53,6 @@ header {
 header h1 {
     font-size: 3em;
     margin: 0;
-    color: #111;
 }
 header p {
     font-size: 1.2em;
@@ -70,27 +68,22 @@ header p {
     flex-direction: column;
     gap: 35px;
 }
-
 .platform {
     position: relative;
     background: #ffffff;
     border-radius: 18px;
     padding: 30px;
-    color: #111;
     border: 1px solid rgba(0,0,0,0.08);
     box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-    transform: translateY(0);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: 0.3s;
 }
 .platform:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 35px rgba(0,0,0,0.18);
 }
-
 .platform h2 {
     margin-top: 0;
     font-size: 1.8em;
-    font-weight: bold;
     color: var(--accent);
 }
 
@@ -108,10 +101,7 @@ header p {
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    font-size: 1.1em;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
-
 .favourite-badge {
     position: absolute;
     top: -15px;
@@ -121,12 +111,10 @@ header p {
     padding: 10px 18px;
     border-radius: 50px;
     font-weight: bold;
-    font-size: 0.95em;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
 /* CTA BUTTON */
-.platform .cta {
+.cta {
     display: inline-block;
     margin-top: 18px;
     padding: 12px 25px;
@@ -135,68 +123,9 @@ header p {
     font-weight: bold;
     border-radius: 8px;
     text-decoration: none;
-    font-size: 1.1em;
-    transition: transform 0.3s, opacity 0.3s;
 }
-.platform .cta:hover {
-    transform: scale(1.07);
+.cta:hover {
     opacity: 0.85;
-}
-
-/* CONTACT FORM */
-.contact {
-    text-align: center;
-    padding: 50px 20px;
-    background: #ffffff;
-    border-top: 1px solid rgba(0,0,0,0.1);
-}
-.contact h2 {
-    color: var(--accent);
-    margin-bottom: 10px;
-}
-.contact-form {
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: left;
-}
-.contact-form label {
-    font-weight: bold;
-    display: block;
-    margin-top: 15px;
-}
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-top: 5px;
-    border-radius: 8px;
-    border: 1px solid rgba(0,0,0,0.2);
-    font-size: 1em;
-}
-.contact-form button {
-    margin-top: 20px;
-    width: 100%;
-    padding: 14px;
-    background: var(--accent);
-    color: #fff;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: opacity 0.3s, transform 0.3s;
-}
-.contact-form button:hover {
-    opacity: 0.85;
-    transform: scale(1.03);
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 20px;
-    color: #555;
-    font-size: 0.9em;
 }
 
 /* FAQ + GUIDES WRAPPERS */
@@ -231,23 +160,70 @@ footer {
     cursor: pointer;
     font-weight: bold;
     color: var(--accent);
-    list-style: none;
 }
-.guide-block summary::-webkit-details-marker {
+.guide-block summary::marker {
     display: none;
 }
-.guide-block summary::before {
-    content: "▶ ";
-    font-size: 0.9em;
-}
-details[open] summary::before {
-    content: "▼ ";
-}
-.guide-block ul {
-    margin-left: 20px;
-}
-.guide-block p {
+.guide-block p, .guide-block ul {
     color: #333;
+}
+
+/* CONTACT FORM */
+.contact {
+    text-align: center;
+    padding: 50px 20px;
+    background: #ffffff;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+.contact h2 {
+    color: var(--accent);
+}
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+.contact-form button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 14px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* FLOATING BACK TO TOP BUTTON */
+#backToTop {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: var(--accent);
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+#backToTop:hover {
+    opacity: 0.85;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #555;
 }
 </style>
 </head>
@@ -258,6 +234,7 @@ details[open] summary::before {
     <a href="#sitesPage">Sites</a>
     <a href="#faqPage">FAQ</a>
     <a href="#guidesPage">Guides</a>
+    <a href="#contactSection">Contact</a>
 </nav>
 
 <!-- SITES PAGE -->
@@ -327,29 +304,6 @@ details[open] summary::before {
 
 </section>
 
-<section class="contact">
-    <h2>Contact Us</h2>
-
-    <div class="contact-form">
-        <form action="mailto:gpthq.help@gmail.com" method="post" enctype="text/plain">
-            <label>Your Name</label>
-            <input type="text" name="Name" required>
-
-            <label>Your Email</label>
-            <input type="email" name="Email" required>
-
-            <label>Your Message</label>
-            <textarea name="Message" rows="5" required></textarea>
-
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
-</section>
-
-<footer>
-    &copy; <span id="year"></span> GPT-HQ. All rights reserved.
-</footer>
-
 </div>
 
 <!-- FAQ PAGE -->
@@ -418,6 +372,33 @@ details[open] summary::before {
         <p><em>More guides will be added soon — stay tuned.</em></p>
     </details>
 </div>
+
+<!-- CONTACT SECTION AT BOTTOM -->
+<div id="contactSection" class="contact">
+    <h2>Contact Us</h2>
+
+    <div class="contact-form">
+        <form action="mailto:gpthq.help@gmail.com" method="post" enctype="text/plain">
+            <label>Your Name</label>
+            <input type="text" name="Name" required>
+
+            <label>Your Email</label>
+            <input type="email" name="Email" required>
+
+            <label>Your Message</label>
+            <textarea name="Message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</div>
+
+<!-- FLOATING BACK TO TOP BUTTON -->
+<a id="backToTop" href="#sitesPage">Top</a>
+
+<footer>
+    &copy; <span id="year"></span> GPT-HQ. All rights reserved.
+</footer>
 
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
