@@ -21,15 +21,34 @@ body {
     --accent: #4A90E2;
 }
 
+/* NAVIGATION */
+nav {
+    background: #ffffff;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    font-size: 1.1em;
+}
+nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+nav a:hover {
+    opacity: 0.7;
+}
+
 /* HEADER */
 header {
     text-align: center;
-    padding: 70px 20px 40px;
+    padding: 50px 20px 30px;
     background: #ffffff;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 header h1 {
-    font-size: 3.2em;
+    font-size: 3em;
     margin: 0;
     color: #111;
 }
@@ -81,12 +100,6 @@ header p {
     box-shadow: 0 0 25px rgba(0,0,0,0.15);
 }
 
-.platform img {
-    width: 160px;
-    margin-bottom: 15px;
-}
-
-/* TITLES */
 .platform h2 {
     margin-top: 0;
     font-size: 1.8em;
@@ -140,34 +153,43 @@ footer {
     font-size: 0.9em;
 }
 
+/* FAQ PAGE */
+#faqPage {
+    display: none;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+.faq-item {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+.faq-item h3 {
+    margin: 0 0 10px;
+    color: var(--accent);
+}
+
 /* ANIMATION */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
 }
 .platform.show { animation: fadeInUp 0.8s forwards; }
-
-/* SCROLL TO TOP */
-#scrollTopBtn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: var(--accent);
-    color: #fff;
-    padding: 12px 16px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    display: none;
-    transition: transform 0.3s;
-}
-#scrollTopBtn:hover {
-    transform: scale(1.1);
-}
 </style>
 </head>
 
 <body>
+
+<nav>
+    <a onclick="showPage('sitesPage')">Sites</a>
+    <a onclick="showPage('faqPage')">FAQ</a>
+</nav>
+
+<!-- SITES PAGE -->
+<div id="sitesPage">
 
 <header>
     <h1>GPT-HQ</h1>
@@ -183,7 +205,6 @@ footer {
 <section class="platforms">
 
     <div class="platform">
-        <img src="https://i.imgur.com/7YQ0p7y.png" alt="CashInStyle Logo">
         <h2>CashInStyle</h2>
         <p>CashInStyle is a modern GPT platform where users earn money by completing surveys, apps, games and offerwalls.</p>
         <ul>
@@ -196,7 +217,6 @@ footer {
     </div>
 
     <div class="platform">
-        <img src="https://i.imgur.com/8z0m0xM.png" alt="Gemsloot Logo">
         <h2>Gemsloot</h2>
         <p>Gemsloot offers smooth UI, instant withdrawals and strong earning options across surveys, apps and games.</p>
         <ul>
@@ -208,7 +228,6 @@ footer {
     </div>
 
     <div class="platform">
-        <img src="https://i.imgur.com/6o3nZyA.png" alt="Freecash Logo">
         <h2>Freecash</h2>
         <p>Freecash is one of the most popular GPT platforms with extremely fast payouts and top‑tier offerwalls.</p>
         <ul>
@@ -230,22 +249,54 @@ footer {
     &copy; <span id="year"></span> GPT-HQ. All rights reserved.
 </footer>
 
-<button id="scrollTopBtn">↑ Top</button>
+</div>
+
+<!-- FAQ PAGE -->
+<div id="faqPage">
+    <h1>Frequently Asked Questions</h1>
+
+    <div class="faq-item">
+        <h3>What are GPT earning sites?</h3>
+        <p>They are platforms where you earn money by completing surveys, apps, games, tasks, and offerwalls.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Are these sites legit?</h3>
+        <p>Yes — the platforms listed on GPT‑HQ are well‑known, trusted, and have paid millions to users worldwide.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>How fast can I withdraw?</h3>
+        <p>Most sites offer instant or same‑day withdrawals depending on the payment method.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>What is the best site for beginners?</h3>
+        <p>CashInStyle and Freecash are great starting points due to high rates and low cashout limits.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Do I need to invest money?</h3>
+        <p>No — all listed platforms are free to use and do not require deposits.</p>
+    </div>
+</div>
 
 <script>
+function showPage(page) {
+    document.getElementById("sitesPage").style.display = "none";
+    document.getElementById("faqPage").style.display = "none";
+    document.getElementById(page).style.display = "block";
+}
+
+// Default page
+showPage('sitesPage');
+
 // Fade-in animation
 const platforms = document.querySelectorAll('.platform');
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('show'); });
 }, { threshold: 0.2 });
 platforms.forEach(platform => observer.observe(platform));
-
-// Scroll to top
-const scrollBtn = document.getElementById('scrollTopBtn');
-window.onscroll = () => {
-    scrollBtn.style.display = (document.documentElement.scrollTop > 300) ? 'block' : 'none';
-};
-scrollBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
 // Dynamic year
 document.getElementById('year').textContent = new Date().getFullYear();
