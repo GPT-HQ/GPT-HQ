@@ -6,6 +6,7 @@
 <title>GPT-HQ</title>
 
 <style>
+/* GLOBAL */
 html { scroll-behavior: smooth; }
 body {
     margin: 0;
@@ -15,11 +16,12 @@ body {
     overflow-x: hidden;
 }
 
+/* MAIN ACCENT COLOR */
 :root {
     --accent: #4A90E2;
 }
 
-/* NAVIGATION */
+/* NAVIGATION (STICKY) */
 nav {
     background: #ffffff;
     border-bottom: 1px solid rgba(0,0,0,0.1);
@@ -38,19 +40,9 @@ nav a {
     font-weight: bold;
     cursor: pointer;
 }
-nav a:hover { opacity: 0.7; }
-
-/* LANGUAGE MENU */
-.lang-menu {
-    margin-left: 20px;
-    font-size: 0.9em;
+nav a:hover {
+    opacity: 0.7;
 }
-.lang-menu span {
-    cursor: pointer;
-    margin: 0 5px;
-    color: #4A90E2;
-}
-.lang-menu span:hover { opacity: 0.7; }
 
 /* HEADER */
 header {
@@ -58,8 +50,15 @@ header {
     padding: 50px 20px 30px;
     background: #ffffff;
 }
-header h1 { font-size: 3em; margin: 0; }
-header p { font-size: 1.2em; color: #555; }
+header h1 {
+    font-size: 3em;
+    margin: 0;
+    color: #111;
+}
+header p {
+    font-size: 1.2em;
+    color: #555;
+}
 
 /* TOP 3 */
 .top3 {
@@ -88,22 +87,30 @@ header p { font-size: 1.2em; color: #555; }
     flex-direction: column;
     gap: 35px;
 }
+
 .platform {
     background: #ffffff;
     border-radius: 18px;
     padding: 30px;
+    color: #111;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform 0.3s, box-shadow 0.3s;
     border: 1px solid rgba(0,0,0,0.08);
-    transition: 0.3s;
 }
 .platform:hover {
     transform: translateY(-6px);
     box-shadow: 0 0 25px rgba(0,0,0,0.15);
 }
+
 .platform h2 {
     margin-top: 0;
     font-size: 1.8em;
+    font-weight: bold;
     color: var(--accent);
 }
+
+/* CTA BUTTON */
 .platform .cta {
     display: inline-block;
     margin-top: 18px;
@@ -113,11 +120,15 @@ header p { font-size: 1.2em; color: #555; }
     font-weight: bold;
     border-radius: 8px;
     text-decoration: none;
-    transition: 0.3s;
+    font-size: 1.1em;
+    transition: transform 0.3s, opacity 0.3s;
 }
-.platform .cta:hover { transform: scale(1.07); opacity: 0.85; }
+.platform .cta:hover {
+    transform: scale(1.07);
+    opacity: 0.85;
+}
 
-/* CONTACT */
+/* DISCORD */
 .discord {
     text-align: center;
     padding: 60px 20px;
@@ -131,9 +142,11 @@ header p { font-size: 1.2em; color: #555; }
     font-weight: bold;
     border-radius: 8px;
     font-size: 1.2em;
-    transition: 0.3s;
+    transition: transform 0.3s;
 }
-.discord a:hover { transform: scale(1.07); }
+.discord a:hover {
+    transform: scale(1.07);
+}
 
 /* FOOTER */
 footer {
@@ -157,7 +170,17 @@ footer {
     margin-bottom: 20px;
     border: 1px solid rgba(0,0,0,0.1);
 }
-.faq-item h3 { color: var(--accent); }
+.faq-item h3 {
+    margin: 0 0 10px;
+    color: var(--accent);
+}
+
+/* ANIMATION */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.platform.show { animation: fadeInUp 0.8s forwards; }
 </style>
 </head>
 
@@ -166,82 +189,63 @@ footer {
 <nav>
     <a onclick="showPage('sitesPage')">Sites</a>
     <a onclick="showPage('faqPage')">FAQ</a>
-
-    <div class="lang-menu">
-        <span onclick="setLang('EN')">EN</span> |
-        <span onclick="setLang('FI')">FI</span> |
-        <span onclick="setLang('SE')">SE</span> |
-        <span onclick="setLang('NO')">NO</span> |
-        <span onclick="setLang('ES')">ES</span> |
-        <span onclick="setLang('FR')">FR</span> |
-        <span onclick="setLang('PL')">PL</span> |
-        <span onclick="setLang('DE')">DE</span> |
-        <span onclick="setLang('DK')">DK</span> |
-        <span onclick="setLang('PH')">PH</span>
-    </div>
 </nav>
 
 <!-- SITES PAGE -->
 <div id="sitesPage">
 
 <header>
-    <h1 class="t-title">GPT-HQ</h1>
-    <p class="t-subtitle">Your gateway to the best GPT platforms in 2026</p>
+    <h1>GPT-HQ</h1>
+    <p>Your gateway to the best GPT platforms in 2026</p>
 </header>
 
 <section class="top3">
-    <div class="highlight t-top1">1. CashInStyle</div>
-    <div class="highlight t-top2">2. Gemsloot</div>
-    <div class="highlight t-top3">3. Freecash</div>
+    <div class="highlight">1. CashInStyle</div>
+    <div class="highlight">2. Gemsloot</div>
+    <div class="highlight">3. Freecash</div>
 </section>
 
 <section class="platforms">
 
     <div class="platform">
-        <h2 class="t-cis-title">CashInStyle</h2>
-        <p class="t-cis-desc">
-            CashInStyle is a modern GPT platform where users earn money by completing surveys, apps and games.
-        </p>
+        <h2>CashInStyle</h2>
+        <p>CashInStyle is a modern GPT platform where users earn money by completing surveys, apps and games.</p>
         <ul>
-            <li class="t-cis-f1">Fast payouts — within 24 hours</li>
-            <li class="t-cis-f2">High offerwall rates</li>
-            <li class="t-cis-f3">Low $2 cashout</li>
-            <li class="t-cis-f4">PayPal, crypto, gift cards</li>
+            <li>Fast payouts — within 24 hours</li>
+            <li>High offerwall rates</li>
+            <li>Low $2 cashout</li>
+            <li>PayPal, crypto, gift cards</li>
         </ul>
-        <a href="https://cashinstyle.com/?ref=Kinu" class="cta t-start">Start Earning</a>
+        <a href="https://cashinstyle.com/?ref=Kinu" class="cta" target="_blank">Start Earning</a>
     </div>
 
     <div class="platform">
-        <h2 class="t-gs-title">Gemsloot</h2>
-        <p class="t-gs-desc">
-            Gemsloot offers smooth UI, instant withdrawals and strong earning options across surveys, apps and games.
-        </p>
+        <h2>Gemsloot</h2>
+        <p>Gemsloot offers smooth UI, instant withdrawals and strong earning options across surveys, apps and games.</p>
         <ul>
-            <li class="t-gs-f1">Instant withdrawals</li>
-            <li class="t-gs-f2">Competitive offerwalls</li>
-            <li class="t-gs-f3">Low cashout</li>
+            <li>Instant withdrawals</li>
+            <li>Competitive offerwalls</li>
+            <li>Low cashout</li>
         </ul>
-        <a href="https://gemsloot.com/?aff=Kinu" class="cta t-start">Start Earning</a>
+        <a href="https://gemsloot.com/?aff=Kinu" class="cta" target="_blank">Start Earning</a>
     </div>
 
     <div class="platform">
-        <h2 class="t-fc-title">Freecash</h2>
-        <p class="t-fc-desc">
-            Freecash is one of the most popular GPT platforms with extremely fast payouts and top‑tier earning options.
-        </p>
+        <h2>Freecash</h2>
+        <p>Freecash is one of the most popular GPT platforms with extremely fast payouts and top‑tier earning options.</p>
         <ul>
-            <li class="t-fc-f1">Payouts in minutes</li>
-            <li class="t-fc-f2">High earning rates</li>
-            <li class="t-fc-f3">PayPal, crypto, gift cards</li>
+            <li>Payouts in minutes</li>
+            <li>High earning rates</li>
+            <li>PayPal, crypto, gift cards</li>
         </ul>
-        <a href="https://freecash.com/r/EXVGN" class="cta t-start">Start Earning</a>
+        <a href="https://freecash.com/r/EXVGN" class="cta" target="_blank">Start Earning</a>
     </div>
 
 </section>
 
 <section class="discord">
-    <h2 class="t-contact-title">Contact Us on Discord</h2>
-    <a href="https://discord.gg/KgGax52nH" target="_blank" class="t-contact-btn">Join our Discord</a>
+    <h2>Contact Us on Discord</h2>
+    <a href="https://discord.gg/KgGax52nH" target="_blank">Join our Discord</a>
 </section>
 
 <footer>
@@ -249,322 +253,69 @@ footer {
 </footer>
 
 </div>
+
 <!-- FAQ PAGE -->
 <div id="faqPage">
-    <h1 class="t-faq-title">Frequently Asked Questions</h1>
+    <h1>Frequently Asked Questions</h1>
 
     <div class="faq-item">
-        <h3 class="t-faq-q1">What are GPT earning sites?</h3>
-        <p class="t-faq-a1">They are platforms where you earn money by completing surveys, apps and games.</p>
+        <h3>What are GPT earning sites?</h3>
+        <p>They are platforms where you earn money by completing surveys, apps and games.</p>
     </div>
 
     <div class="faq-item">
-        <h3 class="t-faq-q2">Are these sites legit?</h3>
-        <p class="t-faq-a2">Yes — the platforms listed on GPT‑HQ are well‑known, trusted, and have paid millions to users worldwide.</p>
+        <h3>Are these sites legit?</h3>
+        <p>Yes — the platforms listed on GPT‑HQ are well‑known, trusted, and have paid millions to users worldwide.</p>
     </div>
 
     <div class="faq-item">
-        <h3 class="t-faq-q3">How fast can I withdraw?</h3>
-        <p class="t-faq-a3">Most sites offer instant or same‑day withdrawals.</p>
+        <h3>How fast can I withdraw?</h3>
+        <p>Most sites offer instant or same‑day withdrawals.</p>
     </div>
 
     <div class="faq-item">
-        <h3 class="t-faq-q4">What is the best site for beginners?</h3>
-        <p class="t-faq-a4">Based on experience and market‑leading offer rates, CashInStyle is the best starting point for beginners.</p>
+        <h3>What is the best site for beginners?</h3>
+        <p>Based on experience and market‑leading offer rates, CashInStyle is the best starting point for beginners.</p>
     </div>
 
     <div class="faq-item">
-        <h3 class="t-faq-q5">Do I need to invest money?</h3>
-        <p class="t-faq-a5">No — all listed platforms are free to use. However, some offers may require a monetary investment in order to complete them.</p>
+        <h3>Do I need to invest money?</h3>
+        <p>No — all listed platforms are free to use. However, some offers may require a monetary investment in order to complete them.</p>
     </div>
 
+    <!-- CONTACT SECTION ALSO ON FAQ PAGE -->
     <section class="discord">
-        <h2 class="t-contact-title">Contact Us on Discord</h2>
-        <a href="https://discord.gg/KgGax52nH" target="_blank" class="t-contact-btn">Join our Discord</a>
+        <h2>Contact Us on Discord</h2>
+        <a href="https://discord.gg/KgGax52nH" target="_blank">Join our Discord</a>
     </section>
 
     <footer>
         &copy; <span id="year2"></span> GPT-HQ. All rights reserved.
     </footer>
+
 </div>
 
 <script>
-/* PAGE SWITCHING */
 function showPage(page) {
     document.getElementById("sitesPage").style.display = "none";
     document.getElementById("faqPage").style.display = "none";
     document.getElementById(page).style.display = "block";
 }
+
+// Default page
 showPage('sitesPage');
 
-/* YEAR */
+// Fade-in animation
+const platforms = document.querySelectorAll('.platform');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('show'); });
+}, { threshold: 0.2 });
+platforms.forEach(platform => observer.observe(platform));
+
+// Dynamic year
 document.getElementById('year').textContent = new Date().getFullYear();
 document.getElementById('year2').textContent = new Date().getFullYear();
+</script>
 
-/* LANGUAGE SYSTEM */
-const translations = {
-    EN: {
-        title: "GPT-HQ",
-        subtitle: "Your gateway to the best GPT platforms in 2026",
-
-        top1: "1. CashInStyle",
-        top2: "2. Gemsloot",
-        top3: "3. Freecash",
-
-        cis_title: "CashInStyle",
-        cis_desc: "CashInStyle is a modern GPT platform where users earn money by completing surveys, apps and games.",
-        cis_f1: "Fast payouts — within 24 hours",
-        cis_f2: "High offerwall rates",
-        cis_f3: "Low $2 cashout",
-        cis_f4: "PayPal, crypto, gift cards",
-
-        gs_title: "Gemsloot",
-        gs_desc: "Gemsloot offers smooth UI, instant withdrawals and strong earning options across surveys, apps and games.",
-        gs_f1: "Instant withdrawals",
-        gs_f2: "Competitive offerwalls",
-        gs_f3: "Low cashout",
-
-        fc_title: "Freecash",
-        fc_desc: "Freecash is one of the most popular GPT platforms with extremely fast payouts and top‑tier earning options.",
-        fc_f1: "Payouts in minutes",
-        fc_f2: "High earning rates",
-        fc_f3: "PayPal, crypto, gift cards",
-
-        start: "Start Earning",
-
-        contact_title: "Contact Us on Discord",
-        contact_btn: "Join our Discord",
-
-        faq_title: "Frequently Asked Questions",
-        faq_q1: "What are GPT earning sites?",
-        faq_a1: "They are platforms where you earn money by completing surveys, apps and games.",
-        faq_q2: "Are these sites legit?",
-        faq_a2: "Yes — the platforms listed on GPT‑HQ are well‑known, trusted, and have paid millions to users worldwide.",
-        faq_q3: "How fast can I withdraw?",
-        faq_a3: "Most sites offer instant or same‑day withdrawals.",
-        faq_q4: "What is the best site for beginners?",
-        faq_a4: "Based on experience and market‑leading offer rates, CashInStyle is the best starting point for beginners.",
-        faq_q5: "Do I need to invest money?",
-        faq_a5: "No — all listed platforms are free to use. However, some offers may require a monetary investment in order to complete them."
-    },
-
-    /* FINNISH */
-    FI: {
-        title: "GPT-HQ",
-        subtitle: "Porttisi parhaisiin GPT‑ansaintasivustoihin vuonna 2026",
-
-        top1: "1. CashInStyle",
-        top2: "2. Gemsloot",
-        top3: "3. Freecash",
-
-        cis_title: "CashInStyle",
-        cis_desc: "CashInStyle on moderni GPT‑alusta, jossa käyttäjät ansaitsevat rahaa tekemällä kyselyitä, sovelluksia ja pelejä.",
-        cis_f1: "Nopeat nostot — jopa 24 tunnissa",
-        cis_f2: "Korkeat offerwall‑tuotot",
-        cis_f3: "Matala $2 minimikotiutus",
-        cis_f4: "PayPal, krypto, lahjakortit",
-
-        gs_title: "Gemsloot",
-        gs_desc: "Gemsloot tarjoaa sulavan käyttöliittymän, nopeat nostot ja vahvat ansaintamahdollisuudet kyselyissä, sovelluksissa ja peleissä.",
-        gs_f1: "Välittömät nostot",
-        gs_f2: "Kilpailukykyiset offerwallit",
-        gs_f3: "Matala minimikotiutus",
-
-        fc_title: "Freecash",
-        fc_desc: "Freecash on yksi suosituimmista GPT‑sivustoista erittäin nopeilla nostoilla ja huipputason ansaintamahdollisuuksilla.",
-        fc_f1: "Nostot minuuteissa",
-        fc_f2: "Korkeat ansaintarateet",
-        fc_f3: "PayPal, krypto, lahjakortit",
-
-        start: "Aloita ansaitseminen",
-
-        contact_title: "Ota yhteyttä Discordissa",
-        contact_btn: "Liity Discordiin",
-
-        faq_title: "Usein kysytyt kysymykset",
-        faq_q1: "Mitä GPT‑ansaintasivustot ovat?",
-        faq_a1: "Ne ovat alustoja, joissa ansaitset rahaa tekemällä kyselyitä, sovelluksia ja pelejä.",
-        faq_q2: "Ovatko nämä sivustot luotettavia?",
-        faq_a2: "Kyllä — listatut sivustot ovat tunnettuja, luotettavia ja maksaneet miljoonia käyttäjille.",
-        faq_q3: "Kuinka nopeasti voin nostaa?",
-        faq_a3: "Useimmat sivustot tarjoavat välittömät tai saman päivän nostot.",
-        faq_q4: "Mikä sivusto on paras aloittelijoille?",
-        faq_a4: "Kokemusten ja markkinoiden parhaiden offer‑ratejen perusteella CashInStyle on paras aloituspaikka.",
-        faq_q5: "Tarvitseeko minun sijoittaa rahaa?",
-        faq_a5: "Ei — kaikki listatut sivustot ovat ilmaisia. Joissain offereissa rahallinen investointi voi kuitenkin olla tarpeen."
-    },
-
-    /* SWEDISH */
-    SE: {
-        title: "GPT-HQ",
-        subtitle: "Din väg till de bästa GPT‑plattformarna 2026",
-
-        top1: "1. CashInStyle",
-        top2: "2. Gemsloot",
-        top3: "3. Freecash",
-
-        cis_title: "CashInStyle",
-        cis_desc: "CashInStyle är en modern GPT‑plattform där användare tjänar pengar genom att göra undersökningar, appar och spel.",
-        cis_f1: "Snabba uttag — inom 24 timmar",
-        cis_f2: "Höga offerwall‑intäkter",
-        cis_f3: "Låg $2 minsta uttag",
-        cis_f4: "PayPal, krypto, presentkort",
-
-        gs_title: "Gemsloot",
-        gs_desc: "Gemsloot erbjuder smidig UI, snabba uttag och starka intjäningsmöjligheter via undersökningar, appar och spel.",
-        gs_f1: "Omedelbara uttag",
-        gs_f2: "Konkurrenskraftiga offerwalls",
-        gs_f3: "Låg minsta uttag",
-
-        fc_title: "Freecash",
-        fc_desc: "Freecash är en av de mest populära GPT‑sidorna med extremt snabba uttag och toppnivå intjäningsmöjligheter.",
-        fc_f1: "Uttag på minuter",
-        fc_f2: "Höga intjäningsnivåer",
-        fc_f3: "PayPal, krypto, presentkort",
-
-        start: "Börja tjäna",
-
-        contact_title: "Kontakta oss på Discord",
-        contact_btn: "Gå med i Discord",
-
-        faq_title: "Vanliga frågor",
-        faq_q1: "Vad är GPT‑intjäningssidor?",
-        faq_a1: "Det är plattformar där du tjänar pengar genom att göra undersökningar, appar och spel.",
-        faq_q2: "Är dessa sidor legitima?",
-        faq_a2: "Ja — plattformarna på GPT‑HQ är välkända, pålitliga och har betalat ut miljoner till användare.",
-        faq_q3: "Hur snabbt kan jag ta ut?",
-        faq_a3: "De flesta sidor erbjuder omedelbara eller samma dags uttag.",
-        faq_q4: "Vilken sida är bäst för nybörjare?",
-        faq_a4: "Baserat på erfarenhet och marknadsledande offer‑rates är CashInStyle det bästa valet för nybörjare.",
-        faq_q5: "Behöver jag investera pengar?",
-        faq_a5: "Nej — alla listade plattformar är gratis. Vissa offers kan dock kräva en monetär investering."
-    },
-
-    /* NORWEGIAN */
-    NO: {
-        title: "GPT-HQ",
-        subtitle: "Din vei til de beste GPT‑plattformene i 2026",
-
-        top1: "1. CashInStyle",
-        top2: "2. Gemsloot",
-        top3: "3. Freecash",
-
-        cis_title: "CashInStyle",
-        cis_desc: "CashInStyle er en moderne GPT‑plattform hvor brukere tjener penger ved å fullføre undersøkelser, apper og spill.",
-        cis_f1: "Raske uttak — innen 24 timer",
-        cis_f2: "Høye offerwall‑rater",
-        cis_f3: "Lav $2 minimumsuttak",
-        cis_f4: "PayPal, krypto, gavekort",
-
-        gs_title: "Gemsloot",
-        gs_desc: "Gemsloot tilbyr et smidig grensesnitt, raske uttak og sterke inntjeningsmuligheter gjennom undersøkelser, apper og spill.",
-        gs_f1: "Umiddelbare uttak",
-        gs_f2: "Konkurransedyktige offerwalls",
-        gs_f3: "Lav minimumsuttak",
-
-        fc_title: "Freecash",
-        fc_desc: "Freecash er en av de mest populære GPT‑sidene med ekstremt raske uttak og førsteklasses inntjeningsmuligheter.",
-        fc_f1: "Uttak på minutter",
-        fc_f2: "Høye inntjeningsrater",
-        fc_f3: "PayPal, krypto, gavekort",
-
-        start: "Begynn å tjene",
-
-        contact_title: "Kontakt oss på Discord",
-        contact_btn: "Bli med på Discord",
-
-        faq_title: "Ofte stilte spørsmål",
-        faq_q1: "Hva er GPT‑inntjeningssider?",
-        faq_a1: "Det er plattformer hvor du tjener penger ved å fullføre undersøkelser, apper og spill.",
-        faq_q2: "Er disse sidene legitime?",
-        faq_a2: "Ja — plattformene på GPT‑HQ er velkjente, pålitelige og har betalt ut millioner til brukere.",
-        faq_q3: "Hvor raskt kan jeg ta ut?",
-        faq_a3: "De fleste sider tilbyr umiddelbare eller samme dags uttak.",
-        faq_q4: "Hvilken side er best for nybegynnere?",
-        faq_a4: "Basert på erfaring og markedsledende offer‑rates er CashInStyle det beste valget for nybegynnere.",
-        faq_q5: "Må jeg investere penger?",
-        faq_a5: "Nei — alle listede plattformer er gratis. Noen offers kan likevel kreve en monetær investering."
-    },
-
-    /* SPANISH */
-    ES: {
-        title: "GPT-HQ",
-        subtitle: "Tu acceso a las mejores plataformas GPT en 2026",
-
-        top1: "1. CashInStyle",
-        top2: "2. Gemsloot",
-        top3: "3. Freecash",
-
-        cis_title: "CashInStyle",
-        cis_desc: "CashInStyle es una plataforma GPT moderna donde los usuarios ganan dinero completando encuestas, aplicaciones y juegos.",
-        cis_f1: "Retiros rápidos — dentro de 24 horas",
-        cis_f2: "Altas tasas de offerwall",
-        cis_f3: "Retiro mínimo de $2",
-        cis_f4: "PayPal, criptomonedas, tarjetas de regalo",
-
-        gs_title: "Gemsloot",
-        gs_desc: "Gemsloot ofrece una interfaz fluida, retiros instantáneos y fuertes oportunidades de ganancias.",
-        gs_f1: "Retiros instantáneos",
-        gs_f2: "Offerwalls competitivos",
-        gs_f3: "Retiro mínimo bajo",
-
-        fc_title: "Freecash",
-        fc_desc: "Freecash es una de las plataformas GPT más populares con retiros extremadamente rápidos y excelentes oportunidades de ganancias.",
-        fc_f1: "Retiros en minutos",
-        fc_f2: "Altas tasas de ganancia",
-        fc_f3: "PayPal, criptomonedas, tarjetas de regalo",
-
-        start: "Comenzar a ganar",
-
-        contact_title: "Contáctanos en Discord",
-        contact_btn: "Únete a nuestro Discord",
-
-        faq_title: "Preguntas frecuentes",
-        faq_q1: "¿Qué son las plataformas GPT?",
-        faq_a1: "Son plataformas donde ganas dinero completando encuestas, aplicaciones y juegos.",
-        faq_q2: "¿Son legítimas estas plataformas?",
-        faq_a2: "Sí — las plataformas listadas en GPT‑HQ son confiables y han pagado millones a los usuarios.",
-        faq_q3: "¿Qué tan rápido puedo retirar?",
-        faq_a3: "La mayoría ofrece retiros instantáneos o el mismo día.",
-        faq_q4: "¿Cuál es la mejor plataforma para principiantes?",
-        faq_a4: "Basado en experiencia y tasas líderes del mercado, CashInStyle es la mejor opción para principiantes.",
-        faq_q5: "¿Necesito invertir dinero?",
-        faq_a5: "No — todas las plataformas listadas son gratuitas. Sin embargo, algunas ofertas pueden requerir una inversión monetaria."
-    },
-
-    /* FRENCH */
-    FR: {
-        title: "GPT-HQ",
-        subtitle: "Votre accès aux meilleures plateformes GPT en 2026",
-
-        top1: "1. CashInStyle",
-        top2: "2. Gemsloot",
-        top3: "3. Freecash",
-
-        cis_title: "CashInStyle",
-        cis_desc: "CashInStyle est une plateforme GPT moderne où les utilisateurs gagnent de l'argent en complétant des sondages, applications et jeux.",
-        cis_f1: "Retraits rapides — en 24 heures",
-        cis_f2: "Taux offerwall élevés",
-        cis_f3: "Retrait minimum de 2$",
-        cis_f4: "PayPal, crypto, cartes cadeaux",
-
-        gs_title: "Gemsloot",
-        gs_desc: "Gemsloot offre une interface fluide, des retraits instantanés et de fortes opportunités de gains.",
-        gs_f1: "Retraits instantanés",
-        gs_f2: "Offerwalls compétitifs",
-        gs_f3: "Retrait minimum bas",
-
-        fc_title: "Freecash",
-        fc_desc: "Freecash est l'une des plateformes GPT les plus populaires avec des retraits très rapides et d'excellentes opportunités de gains.",
-        fc_f1: "Retraits en quelques minutes",
-        fc_f2: "Taux de gains élevés",
-        fc_f3: "PayPal, crypto, cartes cadeaux",
-
-        start: "Commencer à gagner",
-
-        contact_title: "Contactez‑nous sur Discord",
-        contact_btn: "Rejoindre le Discord",
-
-        faq_title: "Questions fréquentes",
-        faq_q1: "Qu'est‑ce qu'une plateforme GPT ?",
-        faq_a1: "Ce sont des plateformes où vous gagnez de l'argent en complétant des sondages,
+</body>
+</html>
