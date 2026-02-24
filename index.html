@@ -59,6 +59,23 @@ header p {
     color: #555;
 }
 
+/* HEADER BUTTON */
+.header-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 28px;
+    background: #ff5722;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1.2em;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.header-btn:hover {
+    opacity: 0.85;
+}
+
 /* PLATFORM CARDS */
 .platforms {
     max-width: 900px;
@@ -251,6 +268,9 @@ footer {
 <header>
     <h1>GPT-HQ</h1>
     <p>Your gateway to the best GPT platforms in 2026</p>
+
+    <!-- NEW BUTTON TO OFFER GUIDE -->
+    <a href="#offerGuide" class="header-btn">🔥 Easy Installation Offers</a>
 </header>
 
 <section class="platforms">
@@ -304,7 +324,7 @@ footer {
         <div class="platform-badge">4</div>
         <h2>SplitDrop</h2>
         <div class="stars">★★★★☆ (4/5)</div>
-        <p>SplitDrop is a gamified GPT platform where users earn through offerwalls, daily bonuses, and fast-paced “drops” that reward the quickest claimers.</p>
+        <p>SplitDrop is a gamified GPT platform where users earn through offerwalls, daily bonuses, and fast-paced “drops”.</p>
         <ul>
             <li>13 offerwalls</li>
             <li>Daily bonus pool</li>
@@ -358,31 +378,64 @@ footer {
     <!-- SURVEYS GUIDE -->
     <details class="guide-block">
         <summary>Surveys — How to Do Them Correctly</summary>
-        <p><strong>Best survey providers:</strong> Based on experience, <strong>BitLabs</strong> and <strong>Prime</strong> consistently offer the most reliable surveys, the best routing, and the highest approval rates.</p>
+        <p><strong>Best survey providers:</strong> Based on experience, <strong>BitLabs</strong> and <strong>Prime</strong> consistently offer the most reliable surveys.</p>
 
         <p><strong>How to answer surveys properly:</strong></p>
         <ul>
-            <li>Always answer honestly whenever possible — it gives you the highest approval rate.</li>
-            <li>If you choose to lie, you must keep the same lie forever. Survey providers store your answers and compare them across all surveys.</li>
-            <li>If your answers don’t match your previous ones <strong>with the same survey provider</strong>, you can be banned or have rewards revoked.</li>
-            <li>Read every question carefully — rushing increases disqualification.</li>
-            <li>Never contradict yourself on key details (age, job, income, household size, education).</li>
-            <li>Don’t randomly click options — attention checks will catch you instantly.</li>
-            <li>Use consistent demographic info across all platforms and routers.</li>
-            <li>If a survey feels broken or suspicious, leave it instead of forcing answers.</li>
+            <li>Always answer honestly whenever possible.</li>
+            <li>If you lie, keep the same lie forever — providers compare your answers.</li>
+            <li>Inconsistent answers with the same provider can get you banned.</li>
+            <li>Read carefully and avoid rushing.</li>
+            <li>Never contradict yourself on key details.</li>
+            <li>Don’t randomly click — attention checks will catch you.</li>
         </ul>
 
-        <p><strong>Quick tips to increase approval rate:</strong></p>
+        <p><strong>Quick tips:</strong></p>
         <ul>
-            <li>Keep your profile updated on each survey router.</li>
-            <li>Avoid extreme answers unless they truly apply to you.</li>
-            <li>Take surveys in a quiet environment to avoid mistakes.</li>
-            <li>Don’t speed — slow and steady earns more in the long run.</li>
-            <li>Be patient: some days have fewer good surveys than others.</li>
+            <li>Keep your profile updated.</li>
+            <li>Avoid extreme answers.</li>
+            <li>Take surveys in a quiet place.</li>
+            <li>Be patient — some days have fewer surveys.</li>
         </ul>
 
-        <p><em>More guides will be added soon — stay tuned.</em></p>
+        <p><em>More guides coming soon.</em></p>
     </details>
+
+    <!-- NEW OFFER GUIDE -->
+    <details class="guide-block" id="offerGuide">
+        <summary>🔥 Quick & Easy Installation Offers — Earn $25+ Fast</summary>
+
+        <p>CashInStyle has a set of extremely fast and easy installation offers. These usually require only registering or installing a game. Offers exist for Desktop, Android & iOS.</p>
+
+        <h3>💻 Desktop Offers</h3>
+        <ul>
+            <li><strong>Raid Shadow Legends T1</strong> — BitLabs — <strong>$8.82</strong> to install</li>
+            <li><strong>Arknights: Endfield</strong> — AyetStudios — <strong>$1.13</strong> to install, + <strong>$2.83</strong> to register</li>
+            <li><strong>World of Warships</strong> — AscendMedia — <strong>$2.70</strong> to unlock 2 ships, + <strong>$3.78</strong> to play 3 battles</li>
+            <li><strong>War Thunder</strong> — AscendMedia — <strong>$5.85</strong> to download, register & log in</li>
+        </ul>
+
+        <h3>📱 Android Offers</h3>
+        <ul>
+            <li><strong>Monopoly Go!</strong> — BitLabs — <strong>$8.19</strong></li>
+            <li><strong>Screw Guru</strong> — BitLabs — <strong>$2.20</strong></li>
+            <li><strong>Animals & Coins</strong> — BitLabs — <strong>$3.78</strong></li>
+            <li><strong>Crossword Jam</strong> — BitLabs — <strong>$1.07</strong></li>
+            <li><strong>Crypto Miner</strong> — BitLabs — <strong>$1.00</strong></li>
+        </ul>
+
+        <h3>🍏 iOS Offers</h3>
+        <ul>
+            <li><strong>Monopoly Go!</strong> — Same as Android</li>
+            <li><strong>Solitaire Clash</strong> — BitLabs — <strong>$7.56</strong></li>
+        </ul>
+
+        <p>Depending on your region, you may see even more offers. If you haven’t done these yet, you can easily earn <strong>$25+ in 15–20 minutes</strong>.</p>
+
+        <p><strong>CashInStyle Exclusive Tip:</strong><br>
+        Register through my link → go to Offers → change partner to <strong>BitLabs</strong> → enjoy a list of instant installation offers.</p>
+    </details>
+
 </div>
 
 <!-- CONTACT SECTION AT BOTTOM -->
@@ -417,4 +470,3 @@ document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
 </body>
-</html>
