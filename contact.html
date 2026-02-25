@@ -12,4 +12,53 @@
 <!-- NAVIGATION -->
 <div class="mobile-nav">
     <div class="nav-header">
-        <span class="nav-title">
+        <span class="nav-title">GPT‑HQ</span>
+
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+
+    <div id="sideMenu" class="side-menu">
+        <a href="index.html" onclick="closeMenu()">Home</a>
+        <a href="sites.html" onclick="closeMenu()">Sites</a>
+        <a href="faq.html" onclick="closeMenu()">FAQ</a>
+        <a href="guides.html" onclick="closeMenu()">Guides</a>
+        <a href="contact.html" onclick="closeMenu()">Contact</a>
+    </div>
+</div>
+
+<!-- GRADIENT HEADER -->
+<header>
+    <h1>Contact Us</h1>
+    <p>We're here to help you with anything GPT‑related</p>
+</header>
+
+<!-- CONTACT FORM SECTION -->
+<div class="contact section-wrapper">
+
+    <div class="contact-form">
+        <form action="mailto:gpthq.help@gmail.com" method="post" enctype="text/plain">
+
+            <label>Your Name</label>
+            <input type="text" name="Name" required>
+
+            <label>Your Email</label>
+            <input type="email" name="Email" required>
+
+            <label>Your Message</label>
+            <textarea name="Message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+</div>
+
+<footer>
+    &copy; <span id="year"></span> GPT‑HQ. All rights reserved.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
