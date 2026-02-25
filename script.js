@@ -20,4 +20,16 @@ document.addEventListener("click", function(event) {
     if (!menu.contains(event.target) && !icon.contains(event.target)) {
         closeMenu();
     }
+    // AUTO‑ACTIVE NAVIGATION LINK
+document.addEventListener("DOMContentLoaded", () => {
+    const currentPage = window.location.pathname.split("/").pop();
+    const links = document.querySelectorAll(".side-menu a");
+
+    links.forEach(link => {
+        const linkPage = link.getAttribute("href");
+        if (linkPage === currentPage) {
+            link.classList.add("active");
+        }
+    });
 });
+
