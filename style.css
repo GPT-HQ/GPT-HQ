@@ -78,7 +78,7 @@ nav a:hover {
 
 .hamburger span {
     height: 4px;
-    background: var(--accent);
+    background: #333 !important; /* DARKER */
     border-radius: 4px;
     transition: 0.3s ease;
 }
@@ -95,16 +95,14 @@ nav a:hover {
     transform: translateY(-9px) rotate(-45deg);
 }
 
-
-/* SIDE MENU */
+/* SIDE MENU (NOW FULL WHITE) */
 .side-menu {
     position: fixed;
     top: 0;
     right: -260px;
     width: 260px;
     height: 100%;
-    background: rgba(255,255,255,0.85);
-    backdrop-filter: blur(20px);
+    background: #ffffff; /* FULL WHITE */
     border-left: 1px solid var(--border);
     box-shadow: -4px 0 15px rgba(0,0,0,0.1);
     display: flex;
@@ -113,20 +111,31 @@ nav a:hover {
     transition: right 0.35s ease;
 }
 
+.side-menu.active {
+    right: 0;
+}
+
+/* SIDE MENU LINKS */
 .side-menu a {
     padding: 18px 25px;
     color: var(--text);
     text-decoration: none;
     border-bottom: 1px solid var(--border);
     font-weight: 500;
+    background: transparent !important;
+    transition: 0.2s ease;
 }
 
 .side-menu a:hover {
-    background: rgba(0,0,0,0.05);
+    background: rgba(0,0,0,0.05) !important;
 }
 
-.side-menu.active {
-    right: 0;
+/* ACTIVE PAGE */
+.side-menu a.active {
+    background: rgba(0,0,0,0.05) !important;
+    border-left: 4px solid var(--accent);
+    font-weight: 600;
+    color: var(--accent) !important;
 }
 
 /* HEADER */
@@ -150,7 +159,7 @@ header p {
     color: var(--text-muted);
 }
 
-/* HEADER BUTTON (Apple blue) */
+/* HEADER BUTTON */
 .header-btn {
     display: inline-block;
     margin-top: 20px;
@@ -169,7 +178,7 @@ header p {
     transform: translateY(-2px);
 }
 
-/* PLATFORM CARDS (Apple glass cards) */
+/* PLATFORM CARDS */
 .platforms {
     max-width: 900px;
     margin: 20px auto 40px;
@@ -183,7 +192,6 @@ header p {
     position: relative;
     background: var(--card);
     backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     border-radius: 18px;
     padding: 30px;
     border: 1px solid var(--border);
@@ -375,32 +383,4 @@ footer {
     text-align: center;
     padding: 20px;
     color: var(--text-muted);
-}
-/* FIX: DARKER HAMBURGER + X */
-.hamburger span {
-    background: #333 !important;
-}
-
-.hamburger.active span:nth-child(1),
-.hamburger.active span:nth-child(3) {
-    background: #333 !important;
-}
-
-/* FIX: SIDE MENU LINKS ALWAYS TRANSPARENT */
-.side-menu a {
-    background: transparent !important;
-    transition: 0.2s ease;
-}
-
-/* FIX: HOVER COLOR */
-.side-menu a:hover {
-    background: rgba(0,0,0,0.05) !important;
-}
-
-/* FIX: ACTIVE PAGE HIGHLIGHT */
-.side-menu a.active {
-    background: rgba(0,0,0,0.05) !important;
-    border-left: 4px solid var(--accent);
-    font-weight: 600;
-    color: var(--accent) !important;
 }
