@@ -28,7 +28,7 @@ body {
     overflow-x: hidden;
 }
 
-/* NAVIGATION */
+/* (Vanhasta navista ei haittaa vaikka se on, mutta sitä ei käytetä) */
 nav {
     background: #1A1A1A;
     border-bottom: 1px solid var(--border);
@@ -50,23 +50,26 @@ nav a:hover {
     opacity: 0.7;
 }
 
-/* HEADER */
+/* GRADIENT HEADER BANNER */
 header {
     text-align: center;
-    padding: 50px 20px 10px;
-    background: #1A1A1A;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #1f3b73, #0d0d0d);
+    border-bottom: 1px solid var(--border);
 }
-.main-title {
+
+header h1 {
     font-size: 42px;
     font-weight: 800;
     letter-spacing: 2px;
     color: #ffffff;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
-.subtitle {
+
+header p {
+    font-size: 18px;
     color: var(--text-muted);
-    font-size: 16px;
-    margin-top: -5px;
+    margin-top: 0;
 }
 
 /* HEADER BUTTON */
@@ -203,21 +206,24 @@ header {
     color: var(--text-muted);
 }
 
-/* CONTACT FORM */
-.contact {
-    text-align: center;
-    padding: 50px 20px;
-    background: #1A1A1A;
-    border-top: 1px solid var(--border);
-}
-.contact h2 {
-    color: var(--accent);
-}
+/* CONTACT FORM – UUSI, KORJATTU */
 .contact-form {
     max-width: 500px;
-    margin: 0 auto;
+    margin: 40px auto;
+    padding: 20px;
+    background: var(--card);
+    border-radius: 12px;
+    border: 1px solid var(--border);
     text-align: left;
+    box-sizing: border-box;
 }
+
+.contact-form label {
+    display: block;
+    margin-top: 15px;
+    color: var(--text);
+}
+
 .contact-form input,
 .contact-form textarea {
     width: 100%;
@@ -227,7 +233,9 @@ header {
     background: #2A2A2A;
     color: var(--text);
     border: 1px solid var(--border);
+    box-sizing: border-box;
 }
+
 .contact-form button {
     margin-top: 20px;
     width: 100%;
@@ -237,6 +245,11 @@ header {
     border: none;
     border-radius: 8px;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    opacity: 0.85;
 }
 
 /* FLOATING BACK TO TOP BUTTON */
@@ -262,6 +275,7 @@ footer {
     padding: 20px;
     color: var(--text-muted);
 }
+
 /* NAV WRAPPER */
 .mobile-nav {
     background: #1A1A1A;
@@ -271,7 +285,7 @@ footer {
     z-index: 999;
 }
 
-/* HEADER */
+/* NAV HEADER */
 .nav-header {
     display: flex;
     justify-content: space-between;
@@ -345,25 +359,4 @@ footer {
 /* MENU OPEN */
 .side-menu.active {
     right: 0;
-}
-/* GRADIENT HEADER BANNER */
-header {
-    text-align: center;
-    padding: 60px 20px;
-    background: linear-gradient(135deg, #1f3b73, #0d0d0d);
-    border-bottom: 1px solid var(--border);
-}
-
-header h1 {
-    font-size: 42px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    color: #ffffff;
-    margin-bottom: 10px;
-}
-
-header p {
-    font-size: 18px;
-    color: var(--text-muted);
-    margin-top: 0;
 }
