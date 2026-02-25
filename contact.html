@@ -34,48 +34,23 @@
     <p>We're here to help you with anything GPT‑related</p>
 </header>
 
-/* CONTACT PAGE */
-.contact-form {
-    max-width: 500px;
-    margin: 40px auto;
-    padding: 20px;
-    background: var(--card);
-    border-radius: 12px;
-    border: 1px solid var(--border);
-}
+<!-- CONTACT FORM SECTION -->
+<div class="section-wrapper">
+    <div class="contact-form">
+        <form action="mailto:gpthq.help@gmail.com" method="post" enctype="text/plain">
+            <label>Your Name</label>
+            <input type="text" name="Name" required>
 
-.contact-form label {
-    display: block;
-    margin-top: 15px;
-    color: var(--text);
-}
+            <label>Your Email</label>
+            <input type="email" name="Email" required>
 
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-top: 5px;
-    border-radius: 8px;
-    background: #2A2A2A;
-    color: var(--text);
-    border: 1px solid var(--border);
-}
+            <label>Your Message</label>
+            <textarea name="Message" rows="5" required></textarea>
 
-.contact-form button {
-    margin-top: 20px;
-    width: 100%;
-    padding: 14px;
-    background: var(--accent);
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.contact-form button:hover {
-    opacity: 0.85;
-}
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</div>
 
 <footer>
     &copy; <span id="year"></span> GPT‑HQ. All rights reserved.
