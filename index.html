@@ -28,13 +28,26 @@
 </head>
 
 <body>
+    <!-- MOBILE NAVIGATION -->
+<div class="mobile-nav">
+    <div class="nav-header">
+        <span class="nav-title">GPT‑HQ</span>
 
-<nav>
-    <a href="#sitesPage">Sites</a>
-    <a href="#faqPage">FAQ</a>
-    <a href="#guidesPage">Guides</a>
-    <a href="#contactSection">Contact</a>
-</nav>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <div id="sideMenu" class="side-menu">
+        <a href="#sitesPage" onclick="closeMenu()">Sites</a>
+        <a href="#faqPage" onclick="closeMenu()">FAQ</a>
+        <a href="#guidesPage" onclick="closeMenu()">Guides</a>
+        <a href="#contactSection" onclick="closeMenu()">Contact</a>
+    </div>
+</div>
+
 
 <!-- SITES PAGE -->
 <div id="sitesPage">
