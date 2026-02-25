@@ -397,3 +397,12 @@ footer {
 </footer>
 
 }
+.nav-title a {
+    transition: transform 0.15s ease;
+    display: inline-block;
+}
+
+.nav-title a:hover {
+    transform: scale(1.08);
+}
+
