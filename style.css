@@ -8,88 +8,167 @@ html, body {
 
 html { scroll-behavior: smooth; }
 
+/* Apple color palette */
 :root {
-    --accent: #4A90E2;
+    --accent: #0071e3;
+    --accent-hover: #0a84ff;
     --gold: #d4af37;
 
-    /* Dark theme colors */
-    --bg: #121212;
-    --card: #1E1E1E;
-    --text: #EAEAEA;
-    --text-muted: #BBBBBB;
-    --border: rgba(255,255,255,0.08);
+    --bg: #f5f5f7;
+    --card: rgba(255,255,255,0.75);
+    --text: #1d1d1f;
+    --text-muted: #6e6e73;
+    --border: rgba(0,0,0,0.08);
+    --shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
 body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", sans-serif;
     background: var(--bg);
     color: var(--text);
     overflow-x: hidden;
 }
 
-/* (Vanhasta navista ei haittaa vaikka se on, mutta sitä ei käytetä) */
-nav {
-    background: #1A1A1A;
+/* NAVIGATION (Apple glassmorphism) */
+nav, .mobile-nav {
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
     padding: 15px 20px;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    font-size: 1.1em;
     position: sticky;
     top: 0;
     z-index: 999;
 }
+
 nav a {
     color: var(--accent);
     text-decoration: none;
-    font-weight: bold;
-}
-nav a:hover {
-    opacity: 0.7;
+    font-weight: 600;
+    transition: 0.2s ease;
 }
 
-/* GRADIENT HEADER BANNER */
+nav a:hover {
+    color: var(--accent-hover);
+}
+
+/* NAV HEADER */
+.nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-title {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: var(--text);
+}
+
+/* HAMBURGER ICON */
+.hamburger {
+    width: 30px;
+    height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.hamburger span {
+    height: 4px;
+    background: var(--accent);
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* SIDE MENU */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 260px;
+    height: 100%;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(20px);
+    border-left: 1px solid var(--border);
+    box-shadow: -4px 0 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    transition: right 0.35s ease;
+}
+
+.side-menu a {
+    padding: 18px 25px;
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    font-weight: 500;
+}
+
+.side-menu a:hover {
+    background: rgba(0,0,0,0.05);
+}
+
+.side-menu.active {
+    right: 0;
+}
+
+/* HEADER */
 header {
     text-align: center;
     padding: 60px 20px;
-    background: linear-gradient(135deg, #1f3b73, #0d0d0d);
+    background: linear-gradient(135deg, #e8ebf1, #f5f5f7);
     border-bottom: 1px solid var(--border);
 }
 
 header h1 {
     font-size: 42px;
     font-weight: 800;
-    letter-spacing: 2px;
-    color: #ffffff;
+    letter-spacing: -1px;
+    color: var(--text);
     margin-bottom: 10px;
 }
 
 header p {
     font-size: 18px;
     color: var(--text-muted);
-    margin-top: 0;
 }
 
-/* HEADER BUTTON */
+/* HEADER BUTTON (Apple blue) */
 .header-btn {
     display: inline-block;
     margin-top: 20px;
     padding: 14px 28px;
-    background: #ff5722;
+    background: var(--accent);
     color: #fff;
-    font-weight: bold;
-    border-radius: 10px;
+    font-weight: 600;
+    border-radius: 12px;
     text-decoration: none;
     font-size: 1.2em;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-}
-.header-btn:hover {
-    opacity: 0.85;
+    transition: 0.2s ease;
 }
 
-/* PLATFORM CARDS */
+.header-btn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+/* PLATFORM CARDS (Apple glass cards) */
 .platforms {
     max-width: 900px;
     margin: 20px auto 40px;
@@ -98,23 +177,29 @@ header p {
     flex-direction: column;
     gap: 35px;
 }
+
 .platform {
     position: relative;
     background: var(--card);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-radius: 18px;
     padding: 30px;
     border: 1px solid var(--border);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-    transition: 0.3s;
+    box-shadow: var(--shadow);
+    transition: 0.25s ease;
 }
+
 .platform:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 35px rgba(0,0,0,0.55);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
 }
+
 .platform h2 {
     margin-top: 0;
     font-size: 1.8em;
     color: var(--accent);
+    font-weight: 600;
 }
 
 /* STAR RATINGS */
@@ -140,6 +225,7 @@ header p {
     align-items: center;
     font-weight: bold;
 }
+
 .favourite-badge {
     position: absolute;
     top: -15px;
@@ -158,12 +244,15 @@ header p {
     padding: 12px 25px;
     background: var(--accent);
     color: #fff;
-    font-weight: bold;
-    border-radius: 8px;
+    font-weight: 600;
+    border-radius: 12px;
     text-decoration: none;
+    transition: 0.2s ease;
 }
+
 .cta:hover {
-    opacity: 0.85;
+    background: var(--accent-hover);
+    transform: translateY(-2px);
 }
 
 /* FAQ + GUIDES WRAPPERS */
@@ -176,50 +265,54 @@ header p {
 /* FAQ ITEMS */
 .faq-item {
     background: var(--card);
-    padding: 20px;
-    border-radius: 12px;
-    margin-bottom: 20px;
+    backdrop-filter: blur(20px);
+    border-radius: 14px;
     border: 1px solid var(--border);
+    padding: 20px;
+    box-shadow: var(--shadow);
 }
+
 .faq-item h3 {
     margin: 0 0 10px;
     color: var(--accent);
+    font-weight: 600;
 }
 
-/* GUIDES USING DETAILS/SUMMARY */
+/* GUIDES */
 .guide-block {
     background: var(--card);
-    border-radius: 12px;
+    backdrop-filter: blur(20px);
+    border-radius: 14px;
     border: 1px solid var(--border);
     margin-bottom: 15px;
-    padding: 10px 15px;
+    padding: 15px;
+    box-shadow: var(--shadow);
 }
+
 .guide-block summary {
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 600;
     color: var(--accent);
 }
+
 .guide-block summary::marker {
     display: none;
 }
+
 .guide-block p, .guide-block ul {
     color: var(--text-muted);
 }
 
-/* CONTACT FORM – UUSI, KORJATTU */
+/* CONTACT FORM */
 .contact-form {
     max-width: 500px;
     margin: 40px auto;
     padding: 20px;
     background: var(--card);
-    border-radius: 12px;
+    backdrop-filter: blur(20px);
+    border-radius: 14px;
     border: 1px solid var(--border);
-    text-align: left;
-    box-sizing: border-box;
-}
-.contact-form input,
-.contact-form textarea {
-    max-width: 100%;
+    box-shadow: var(--shadow);
 }
 
 .contact-form label {
@@ -233,11 +326,10 @@ header p {
     width: 100%;
     padding: 12px;
     margin-top: 5px;
-    border-radius: 8px;
-    background: #2A2A2A;
-    color: var(--text);
+    border-radius: 10px;
+    background: rgba(255,255,255,0.6);
     border: 1px solid var(--border);
-    box-sizing: border-box;
+    color: var(--text);
 }
 
 .contact-form button {
@@ -247,16 +339,17 @@ header p {
     background: var(--accent);
     color: #fff;
     border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: 0.2s ease;
 }
 
 .contact-form button:hover {
-    opacity: 0.85;
+    background: var(--accent-hover);
+    transform: translateY(-2px);
 }
 
-/* FLOATING BACK TO TOP BUTTON */
+/* BACK TO TOP BUTTON */
 #backToTop {
     position: fixed;
     bottom: 25px;
@@ -265,12 +358,15 @@ header p {
     color: #fff;
     padding: 12px 18px;
     border-radius: 50px;
-    font-weight: bold;
+    font-weight: 600;
     text-decoration: none;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    box-shadow: var(--shadow);
+    transition: 0.2s ease;
 }
+
 #backToTop:hover {
-    opacity: 0.85;
+    background: var(--accent-hover);
+    transform: translateY(-2px);
 }
 
 /* FOOTER */
@@ -278,89 +374,4 @@ footer {
     text-align: center;
     padding: 20px;
     color: var(--text-muted);
-}
-
-/* NAV WRAPPER */
-.mobile-nav {
-    background: #1A1A1A;
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
-    z-index: 999;
-}
-
-/* NAV HEADER */
-.nav-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-}
-
-.nav-title {
-    font-size: 1.4em;
-    font-weight: bold;
-    color: var(--accent);
-}
-
-/* HAMBURGER ICON (3 LINES) */
-.hamburger {
-    width: 30px;
-    height: 22px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
-}
-
-.hamburger span {
-    height: 4px;
-    background: var(--accent);
-    border-radius: 4px;
-    transition: 0.3s ease;
-}
-
-/* HAMBURGER → X ANIMATION */
-.hamburger.active span:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-}
-
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-}
-
-/* SIDE MENU */
-.side-menu {
-    position: fixed;
-    top: 0;
-    right: -260px; /* hidden */
-    width: 260px;
-    height: 100%;
-    background: #1A1A1A;
-    border-left: 1px solid var(--border);
-    box-shadow: -4px 0 15px rgba(0,0,0,0.5);
-    display: flex;
-    flex-direction: column;
-    padding-top: 80px;
-    transition: right 0.35s ease;
-}
-
-.side-menu a {
-    padding: 18px 25px;
-    color: var(--text);
-    text-decoration: none;
-    border-bottom: 1px solid var(--border);
-}
-
-.side-menu a:hover {
-    background: #222;
-}
-
-/* MENU OPEN */
-.side-menu.active {
-    right: 0;
 }
