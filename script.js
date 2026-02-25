@@ -21,6 +21,7 @@ document.addEventListener("click", function(event) {
     const menu = document.getElementById("sideMenu");
     const icon = document.getElementById("hamburger");
 
+    // If click is outside menu AND outside hamburger icon → close
     if (!menu.contains(event.target) && !icon.contains(event.target)) {
         closeMenu();
     }
