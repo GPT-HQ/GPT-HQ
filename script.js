@@ -1,9 +1,6 @@
 // FORCE CSS RELOAD
 document.addEventListener("DOMContentLoaded", () => {
-    const css = document.querySelector('link[href="style.css"]');
-    if (css) {
-        css.href = "style.css?v=" + Date.now();
-    }
+    
 });
 
 // Set current year in footer
