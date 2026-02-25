@@ -1,4 +1,7 @@
+// Set current year in footer
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// Toggle menu open/close
 function toggleMenu() {
     const menu = document.getElementById("sideMenu");
     const icon = document.getElementById("hamburger");
@@ -7,12 +10,13 @@ function toggleMenu() {
     icon.classList.toggle("active");
 }
 
+// Close menu
 function closeMenu() {
     document.getElementById("sideMenu").classList.remove("active");
     document.getElementById("hamburger").classList.remove("active");
 }
 
-/* Close menu when clicking outside */
+// Close menu when clicking outside
 document.addEventListener("click", function(event) {
     const menu = document.getElementById("sideMenu");
     const icon = document.getElementById("hamburger");
@@ -20,7 +24,9 @@ document.addEventListener("click", function(event) {
     if (!menu.contains(event.target) && !icon.contains(event.target)) {
         closeMenu();
     }
-    // AUTO‑ACTIVE NAVIGATION LINK
+});
+
+// AUTO‑ACTIVE NAVIGATION LINK
 document.addEventListener("DOMContentLoaded", () => {
     const currentPage = window.location.pathname.split("/").pop();
     const links = document.querySelectorAll(".side-menu a");
@@ -32,4 +38,3 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
-
