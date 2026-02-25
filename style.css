@@ -94,15 +94,7 @@ nav a:hover {
 .hamburger.active span:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
 }
-/* DARKER X / HAMBURGER FOR VISIBILITY */
-.hamburger span {
-    background: #333; /* tummempi */
-}
 
-.hamburger.active span:nth-child(1),
-.hamburger.active span:nth-child(3) {
-    background: #333; /* X näkyy paremmin */
-}
 
 /* SIDE MENU */
 .side-menu {
