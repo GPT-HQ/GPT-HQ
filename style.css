@@ -82,7 +82,7 @@ nav a:hover {
 
 .hamburger span {
     height: 4px;
-    background: #333 !important; /* DARKER */
+    background: #333 !important;
     border-radius: 4px;
     transition: 0.3s ease;
 }
@@ -99,13 +99,13 @@ nav a:hover {
     transform: translateY(-9px) rotate(-45deg);
 }
 
-/* SIDE MENU (NOW FULL WHITE) */
+/* SIDE MENU (FULL WHITE + FULL HEIGHT) */
 .side-menu {
     position: fixed;
     top: 0;
     right: -260px;
     width: 260px;
-    height: 100vh; /* <-- tämä korjaa ongelman */
+    height: 100vh;
     background: #ffffff;
     border-left: 1px solid var(--border);
     box-shadow: -4px 0 15px rgba(0,0,0,0.1);
@@ -115,12 +115,11 @@ nav a:hover {
     transition: right 0.35s ease;
 }
 
-
 .side-menu.active {
     right: 0;
 }
 
-/* SIDE MENU LINKS */
+/* SIDE MENU LINKS (FIXED WIDTH + FULL ROW) */
 .side-menu a {
     padding: 18px 25px;
     color: var(--text);
@@ -129,6 +128,8 @@ nav a:hover {
     font-weight: 500;
     background: transparent !important;
     transition: 0.2s ease;
+    display: block; /* ← TÄMÄ KORJAA ONGELMAN */
+    width: 100%;   /* ← VARMISTAA TÄYDEN LEVEYDEN */
 }
 
 .side-menu a:hover {
