@@ -1,22 +1,8 @@
-// Set current year
+// Vuosi footerissa
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Toggle mobile menu
+// Hampurilainen: lisää/poista .open mobile-naville
 function toggleMenu() {
-    const nav = document.querySelector(".mobile-nav .nav-links");
-    const icon = document.getElementById("hamburger");
-
-    nav.classList.toggle("active");
-    icon.classList.toggle("active");
+    const mobileNav = document.querySelector(".mobile-nav");
+    mobileNav.classList.toggle("open");
 }
-
-// Close menu when clicking outside
-document.addEventListener("click", function(event) {
-    const nav = document.querySelector(".mobile-nav .nav-links");
-    const icon = document.getElementById("hamburger");
-
-    if (!nav.contains(event.target) && !icon.contains(event.target)) {
-        nav.classList.remove("active");
-        icon.classList.remove("active");
-    }
-});
