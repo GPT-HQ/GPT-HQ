@@ -385,3 +385,32 @@ footer {
     padding: 20px;
     color: var(--text-muted);
 }
+/* FIX: DARKER HAMBURGER + X */
+.hamburger span {
+    background: #333 !important;
+}
+
+.hamburger.active span:nth-child(1),
+.hamburger.active span:nth-child(3) {
+    background: #333 !important;
+}
+
+/* FIX: SIDE MENU LINKS ALWAYS TRANSPARENT */
+.side-menu a {
+    background: transparent !important;
+    transition: 0.2s ease;
+}
+
+/* FIX: HOVER COLOR */
+.side-menu a:hover {
+    background: rgba(0,0,0,0.05) !important;
+}
+
+/* FIX: ACTIVE PAGE HIGHLIGHT */
+.side-menu a.active {
+    background: rgba(0,0,0,0.05) !important;
+    border-left: 4px solid var(--accent);
+    font-weight: 600;
+    color: var(--accent) !important;
+}
+
