@@ -1,27 +1,32 @@
-function toggleMenu() {
-    const menu = document.getElementById("sideMenu");
-    const burger = document.getElementById("hamburger");
-
-    menu.classList.toggle("active");
-    burger.classList.toggle("active");
-}
-
-function closeMenu() {
-    const menu = document.getElementById("sideMenu");
-    const burger = document.getElementById("hamburger");
-
-    menu.classList.remove("active");
-    burger.classList.remove("active");
-}
-
-// Vuosi footerissa
+// Set current year in footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Hampurilainen: lisää/poista .open mobile-naville
+// Toggle menu open/close
 function toggleMenu() {
-    const mobileNav = document.querySelector(".mobile-nav");
-    mobileNav.classList.toggle("open");
+    const menu = document.getElementById("sideMenu");
+    const icon = document.getElementById("hamburger");
+
+    menu.classList.toggle("active");
+    icon.classList.toggle("active");
 }
+
+// Close menu
+function closeMenu() {
+    document.getElementById("sideMenu").classList.remove("active");
+    document.getElementById("hamburger").classList.remove("active");
+}
+
+// Close menu when clicking outside
+document.addEventListener("click", function(event) {
+    const menu = document.getElementById("sideMenu");
+    const icon = document.getElementById("hamburger");
+
+    // If click is outside menu AND outside hamburger icon → close
+    if (!menu.contains(event.target) && !icon.contains(event.target)) {
+        closeMenu();
+    }
+});
+
 // AUTO‑ACTIVE NAVIGATION LINK
 document.addEventListener("DOMContentLoaded", () => {
     const currentPage = window.location.pathname.split("/").pop();
@@ -34,4 +39,3 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
-
