@@ -121,5 +121,19 @@
 </footer>
 
 <script src="script.js"></script>
+
+<!-- ACCORDION SCRIPT (vain yksi auki kerrallaan) -->
+<script>
+document.querySelectorAll(".guide-block").forEach((block) => {
+    block.addEventListener("toggle", function () {
+        if (this.open) {
+            document.querySelectorAll(".guide-block").forEach((other) => {
+                if (other !== this) other.open = false;
+            });
+        }
+    });
+});
+</script>
+
 </body>
 </html>
