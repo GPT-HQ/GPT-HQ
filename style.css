@@ -69,7 +69,7 @@ nav a:hover {
     color: var(--text);
 }
 
-/* HAMBURGER ICON — FIXED VISIBILITY */
+/* HAMBURGER ICON */
 .hamburger {
     width: 32px;
     height: 26px;
@@ -77,12 +77,12 @@ nav a:hover {
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
-    z-index: 2000; /* ← VARMISTAA ETTÄ RUKSI NÄKYY */
+    z-index: 2000;
 }
 
 .hamburger span {
     height: 4px;
-    background: #000 !important; /* ← MUSTA, NÄKYVÄ */
+    background: #000 !important;
     border-radius: 4px;
     transition: 0.3s ease;
 }
@@ -99,7 +99,7 @@ nav a:hover {
     transform: translateY(-11px) rotate(-45deg);
 }
 
-/* SIDE MENU — AUTO HEIGHT (NOT FULL SCREEN) */
+/* SIDE MENU */
 .side-menu {
     position: fixed;
     top: 0;
@@ -111,7 +111,6 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     padding-top: 70px;
-    padding-bottom: 0; /* ← EI TYHJÄÄ ALAA */
     transition: right 0.35s ease;
     z-index: 1500;
 }
@@ -120,15 +119,12 @@ nav a:hover {
     right: 0;
 }
 
-/* SIDE MENU LINKS — FULL WIDTH */
 .side-menu a {
     padding: 16px 20px;
     color: var(--text);
     text-decoration: none;
     border-bottom: 1px solid var(--border);
     font-weight: 500;
-    background: transparent !important;
-    transition: 0.2s ease;
     display: block;
     width: 100%;
 }
@@ -137,7 +133,6 @@ nav a:hover {
     background: rgba(0,0,0,0.05) !important;
 }
 
-/* ACTIVE PAGE */
 .side-menu a.active {
     background: rgba(0,0,0,0.05) !important;
     border-left: 4px solid var(--accent);
@@ -311,10 +306,6 @@ header p {
     color: var(--accent);
 }
 
-.guide-block summary::marker {
-    display: none;
-}
-
 .guide-block p, .guide-block ul {
     color: var(--text-muted);
 }
@@ -385,18 +376,14 @@ header p {
     transform: translateY(-2px);
 }
 
-/* FOOTER */
+/* FOOTER — FIXED */
 footer {
     text-align: center;
     padding: 20px;
     color: var(--text-muted);
-    <footer>
-    © <span id="year"></span> GPT‑HQ — All rights reserved.
-    <br>
-    <a href="terms.html" style="color: var(--text-muted); text-decoration: none;">Terms & Privacy</a>
-</footer>
-
 }
+
+/* ACTIVE NAV LINK */
 .nav-title a {
     transition: transform 0.15s ease;
     display: inline-block;
@@ -405,9 +392,10 @@ footer {
 .nav-title a:hover {
     transform: scale(1.08);
 }
+
 .nav-links a.active {
-    color: #1e90ff;        /* kirkas sininen */
-    font-weight: 600;      /* hieman paksumpi */
+    color: #1e90ff;
+    font-weight: 600;
 }
 
 .nav-links a.active::after {
@@ -415,8 +403,20 @@ footer {
     display: block;
     width: 100%;
     height: 2px;
-    background: #1e90ff;   /* sininen alleviivaus */
+    background: #1e90ff;
     margin-top: 2px;
     border-radius: 2px;
 }
 
+/* RESPONSIVE NAV FIXES */
+@media (max-width: 768px) {
+    header.top {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .mobile-nav {
+        display: none;
+    }
+}
