@@ -34,11 +34,10 @@ body {
     overflow-x: hidden;
 }
 
-/* NAVIGATION (Apple glassmorphism) */
+/* NAVIGATION */
 nav, .mobile-nav {
     background: rgba(255,255,255,0.7);
     backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
     padding: 15px 20px;
     position: sticky;
@@ -70,25 +69,26 @@ nav a:hover {
     color: var(--text);
 }
 
-/* HAMBURGER ICON */
+/* HAMBURGER ICON — FIXED VISIBILITY */
 .hamburger {
-    width: 30px;
-    height: 22px;
+    width: 32px;
+    height: 26px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
+    z-index: 2000; /* ← VARMISTAA ETTÄ RUKSI NÄKYY */
 }
 
 .hamburger span {
     height: 4px;
-    background: #333 !important;
+    background: #000 !important; /* ← MUSTA, NÄKYVÄ */
     border-radius: 4px;
     transition: 0.3s ease;
 }
 
 .hamburger.active span:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
+    transform: translateY(11px) rotate(45deg);
 }
 
 .hamburger.active span:nth-child(2) {
@@ -96,40 +96,41 @@ nav a:hover {
 }
 
 .hamburger.active span:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
+    transform: translateY(-11px) rotate(-45deg);
 }
 
-/* SIDE MENU (FULL WHITE + FULL HEIGHT) */
+/* SIDE MENU — AUTO HEIGHT (NOT FULL SCREEN) */
 .side-menu {
     position: fixed;
     top: 0;
-    right: -260px;
-    width: 260px;
-    height: 100vh;
+    right: -220px;
+    width: 220px;
     background: #ffffff;
     border-left: 1px solid var(--border);
     box-shadow: -4px 0 15px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
-    padding-top: 80px;
+    padding-top: 70px;
+    padding-bottom: 0; /* ← EI TYHJÄÄ ALAA */
     transition: right 0.35s ease;
+    z-index: 1500;
 }
 
 .side-menu.active {
     right: 0;
 }
 
-/* SIDE MENU LINKS (FIXED WIDTH + FULL ROW) */
+/* SIDE MENU LINKS — FULL WIDTH */
 .side-menu a {
-    padding: 18px 25px;
+    padding: 16px 20px;
     color: var(--text);
     text-decoration: none;
     border-bottom: 1px solid var(--border);
     font-weight: 500;
     background: transparent !important;
     transition: 0.2s ease;
-    display: block; /* ← TÄMÄ KORJAA ONGELMAN */
-    width: 100%;   /* ← VARMISTAA TÄYDEN LEVEYDEN */
+    display: block;
+    width: 100%;
 }
 
 .side-menu a:hover {
