@@ -1,3 +1,19 @@
+function toggleMenu() {
+    const menu = document.getElementById("sideMenu");
+    const burger = document.getElementById("hamburger");
+
+    menu.classList.toggle("active");
+    burger.classList.toggle("active");
+}
+
+function closeMenu() {
+    const menu = document.getElementById("sideMenu");
+    const burger = document.getElementById("hamburger");
+
+    menu.classList.remove("active");
+    burger.classList.remove("active");
+}
+
 // Vuosi footerissa
 document.getElementById('year').textContent = new Date().getFullYear();
 
