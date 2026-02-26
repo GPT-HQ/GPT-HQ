@@ -1,7 +1,7 @@
-// Set current year in footer
+// Set current year
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Toggle mobile menu (hamburger)
+// Toggle mobile menu
 function toggleMenu() {
     const nav = document.querySelector(".mobile-nav .nav-links");
     const icon = document.getElementById("hamburger");
@@ -10,7 +10,7 @@ function toggleMenu() {
     icon.classList.toggle("active");
 }
 
-// Close mobile menu when clicking outside
+// Close menu when clicking outside
 document.addEventListener("click", function(event) {
     const nav = document.querySelector(".mobile-nav .nav-links");
     const icon = document.getElementById("hamburger");
