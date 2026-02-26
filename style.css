@@ -96,6 +96,7 @@ nav a:hover {
 }
 
 /* SIDE MENU */
+
 .side-menu {
     position: fixed;
     top: 0;
@@ -127,6 +128,15 @@ nav a:hover {
 .side-menu.active {
     right: 0;
 }
+
+/* ACTIVE PAGE IN SIDE MENU */
+.side-menu a.active {
+    background: rgba(0,0,0,0.05);
+    border-left: 4px solid var(--accent);
+    font-weight: 600;
+    color: var(--accent);
+}
+
 
 /* HEADER */
 header {
