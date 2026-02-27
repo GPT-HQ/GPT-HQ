@@ -407,3 +407,24 @@ footer {
     object-fit: contain;
 }
 
+/* RESPONSIVE HEADER LOGO */
+.site-header {
+    text-align: center;
+    padding: 50px 20px 30px;
+}
+
+.site-logo {
+    height: 60px;          /* Desktop-koko */
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 12px;
+}
+
+/* Mobiilissa pienempi logo */
+@media (max-width: 600px) {
+    .site-logo {
+        height: 42px;
+    }
+}
+
