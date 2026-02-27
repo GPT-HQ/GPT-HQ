@@ -433,3 +433,30 @@ footer {
         height: 85px;
     }
 }
+
+.site-header {
+    text-align: center;
+    padding: 30px 20px 10px;
+}
+
+.site-logo {
+    height: 150px; /* iso logo */
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 18px;
+}
+
+@media (max-width: 600px) {
+    .site-logo {
+        height: 130px; /* iso mobiilissa */
+    }
+}
+
+.site-header p {
+    max-width: 280px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.35;
+}
+
