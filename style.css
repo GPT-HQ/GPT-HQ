@@ -77,12 +77,12 @@ nav a:hover {
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
-    z-index: 2000; /* ← VARMISTAA ETTÄ RUKSI NÄKYY */
+    z-index: 2000;
 }
 
 .hamburger span {
     height: 4px;
-    background: #000 !important; /* ← MUSTA, NÄKYVÄ */
+    background: #000 !important;
     border-radius: 4px;
     transition: 0.3s ease;
 }
@@ -99,7 +99,7 @@ nav a:hover {
     transform: translateY(-11px) rotate(-45deg);
 }
 
-/* SIDE MENU — AUTO HEIGHT (NOT FULL SCREEN) */
+/* SIDE MENU */
 .side-menu {
     position: fixed;
     top: 0;
@@ -111,7 +111,7 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     padding-top: 70px;
-    padding-bottom: 0; /* ← EI TYHJÄÄ ALAA */
+    padding-bottom: 0;
     transition: right 0.35s ease;
     z-index: 1500;
 }
@@ -120,7 +120,6 @@ nav a:hover {
     right: 0;
 }
 
-/* SIDE MENU LINKS — FULL WIDTH */
 .side-menu a {
     padding: 16px 20px;
     color: var(--text);
@@ -137,7 +136,6 @@ nav a:hover {
     background: rgba(0,0,0,0.05) !important;
 }
 
-/* ACTIVE PAGE */
 .side-menu a.active {
     background: rgba(0,0,0,0.05) !important;
     border-left: 4px solid var(--accent);
@@ -401,62 +399,30 @@ footer {
     transform: scale(1.08);
 }
 
-.site-logo {
-    height: 70px;
-    max-width: 100%;
-    object-fit: contain;
-}
-
-/* RESPONSIVE HEADER LOGO */
-.site-header {
-    text-align: center;
-    padding: 50px 20px 30px;
-}
-
-/* RESPONSIVE HEADER LOGO — BIGGER VERSION */
-.site-header {
-    text-align: center;
-    padding: 40px 20px 25px;
-}
-
-.site-logo {
-    height: 110px;        /* Desktop-koko (selvästi isompi) */
-    max-width: 100%;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto 14px;
-}
-
-/* Mobiilissa vielä isompi logo */
-@media (max-width: 600px) {
-    .site-logo {
-        height: 85px;
-    }
-}
-
+/* CLEAN + FINAL LOGO SYSTEM */
 .site-header {
     text-align: center;
     padding: 30px 20px 10px;
 }
 
 .site-logo {
-    height: 150px; /* iso logo */
+    height: 150px;
     max-width: 100%;
     object-fit: contain;
     display: block;
-    margin: 0 auto 18px;
+    margin: 0 auto 6px;
 }
 
 @media (max-width: 600px) {
     .site-logo {
-        height: 130px; /* iso mobiilissa */
+        height: 130px;
+        margin-bottom: 4px;
     }
 }
 
 .site-header p {
-    max-width: 280px;
+    max-width: 260px;
     margin: 0 auto;
     font-size: 16px;
     line-height: 1.35;
 }
-
