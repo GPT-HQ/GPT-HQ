@@ -400,3 +400,10 @@ footer {
 .nav-title a:hover {
     transform: scale(1.08);
 }
+
+.site-logo {
+    height: 70px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
