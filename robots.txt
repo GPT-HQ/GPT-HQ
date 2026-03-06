@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gpt-hq.github.io/sitemap.xml
+Sitemap: https://gpt-hq.org/sitemap.xml
