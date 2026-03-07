@@ -433,3 +433,73 @@ footer {
     display: flex;
     align-items: center;
 }
+
+.accordion {
+  max-width: 800px;
+  margin: 2rem auto;
+  font-family: Arial, sans-serif;
+}
+
+.accordion-item {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  background: #ffffff;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.accordion-item.active {
+  border-color: #bbb;
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #f7f7f7;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  transition: background 0.2s ease;
+}
+
+.accordion-header:hover {
+  background: #f0f0f0;
+}
+
+.accordion-icon {
+  font-size: 1.2rem;
+  font-weight: 700;
+  transition: transform 0.25s ease;
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1rem;
+  transition: max-height 0.25s ease, padding 0.25s ease;
+}
+
+.accordion-item.active .accordion-content {
+  padding: 0.75rem 1rem 1rem;
+  max-height: 600px;
+}
+
+.accordion-content p,
+.accordion-content ul {
+  margin: 0.5rem 0;
+}
+
+.accordion-content ul {
+  padding-left: 1.2rem;
+}
+
