@@ -23,15 +23,56 @@
     <meta name="twitter:description" content="Compare the top GPT earning platforms and start earning today.">
     <meta name="twitter:image" content="https://gpt-hq.org/og-image.PNG">
 
-    <!-- Counter.dev -->
-    <script src="https://cdn.counter.dev/script.js"
-            data-id="80669e69-a00f-4d47-b67e-f3dfccd90e70"
-            data-utcoffset="2"></script>
-
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css?v=9999">
+
+    <!-- BreadcrumbList schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://gpt-hq.org/"
+        }
+      ]
+    }
+    </script>
+
+    <!-- WebSite schema (helps Google understand your site structure) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://gpt-hq.org/",
+      "name": "GPT-HQ",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://gpt-hq.org/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- Organization schema (THIS makes your logo appear in Google results) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "GPT-HQ",
+      "url": "https://gpt-hq.org/",
+      "logo": "https://gpt-hq.org/logo.png",
+      "sameAs": []
+    }
+    </script>
+
 </head>
 
 <body>
+
 
 <!-- MOBILE NAV -->
 <div class="mobile-nav">
