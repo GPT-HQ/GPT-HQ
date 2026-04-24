@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT‑HQ – Contact</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://gpt-hq.org/contact.html">
+
+    <link rel="stylesheet" href="style.css?v=9999">
+
+    <meta name="description" content="Contact GPT-HQ for support, questions, feedback or partnership inquiries.">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "GPT-HQ Contact",
+      "url": "https://gpt-hq.org/contact.html",
+      "description": "Contact GPT-HQ for support, questions, feedback or partnership inquiries.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "GPT-HQ",
+        "url": "https://gpt-hq.org/",
+        "logo": "https://gpt-hq.org/logo.PNG"
+      }
+    }
+    </script>
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="GPT‑HQ – Contact">
+    <meta property="og:description" content="Get in touch with GPT-HQ for support, questions or feedback.">
+    <meta property="og:image" content="https://gpt-hq.org/og-image.PNG">
+    <meta property="og:url" content="https://gpt-hq.org/contact.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="GPT‑HQ">
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GPT‑HQ – Contact">
+    <meta name="twitter:description" content="Get in touch with GPT-HQ for support, questions or feedback.">
+    <meta name="twitter:image" content="https://gpt-hq.org/og-image.PNG">
+
+    <!-- Mobile input fix -->
+    <style>
+        .contact-form input,
+        .contact-form textarea {
+            box-sizing: border-box;
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav">
+    <div class="nav-header">
+        <span class="nav-title">
+            <a href="index.html" style="text-decoration: none; color: inherit;">GPT-HQ</a>
+        </span>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+
+    <div id="sideMenu" class="side-menu">
+        <a href="index.html">Sites</a>
+        <a href="guides.html">Tracking Setup</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html" class="active">Contact</a>
+    </div>
+</div>
+
+<!-- HEADER -->
+<header>
+    <h1>Contact Us</h1>
+    <p>We're here to help you with anything GPT‑related</p>
+</header>
+
+<!-- CONTACT FORM -->
+<div class="section-wrapper">
+    <div class="contact-form">
+        <form action="mailto:gpthq.help@gmail.com" method="post" enctype="text/plain">
+
+            <label>Your Name</label>
+            <input type="text" name="Name" required>
+
+            <label>Your Email</label>
+            <input type="email" name="Email" required>
+
+            <label>Your Message</label>
+            <textarea name="Message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    © <span id="year"></span> GPT‑HQ — All rights reserved.
+    <br>
+    <a href="terms.html" style="color: var(--text-muted); text-decoration: none;">Terms & Privacy</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
