@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+# Block GitHub Pages system folders
+Disallow: /assets/
+Disallow: /CNAME
+Disallow: /README.md
+
 Sitemap: https://gpt-hq.org/sitemap.xml
